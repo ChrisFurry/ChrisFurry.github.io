@@ -2,7 +2,58 @@
 <html>
 <style>
 body {
-	text-align: center
+	background-color: #242424;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 2px black;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	top: 0;
+	bottom: 0;
+}
+.thebg {
+	background-image: url("images/BG.png");
+	background-position: center top;
+	overflow-x: hidden;
+	overflow-y: auto;
+	top: 0;
+	bottom: 0;
+}
+.topweb {
+	text-align: center;
+	background-color: #242424;
+}
+.imagelinks {
+	text-align: center;
+	transform: scale(2) translate(0px,32px);
+	height: 128px;
+	image-rendering: pixelated;
+}
+.projlinks {
+	text-align: center;
+	transform: scale(2) translate(0px,64px);
+	height: 256px;
+	image-rendering: pixelated;
+}
+.bottomtext {
+	text-align: center;
+	background-color: #242424;
+}
+/* unvisited link */
+a:link {
+color: #24b424;
+}
+/* visited link */
+a:visited {
+color: #b4006c;
+}
+/* mouse over link */
+a:hover {
+color: #48ff24;
+}
+/* selected link */
+a:active {
+color: white;
 }
 </style>
 <head>
@@ -10,15 +61,19 @@ body {
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
 	</head>
 <body>
-	<p><strong>ChrisFurry's dumb simple website</strong></p>
-	<p><span style="text-decoration: underline;">About me</span></p>
-	<p>I'm ChrisFurry (or just Chris), I'm a 17 year old who does art and programming.<br />I'm making a Indie game called Techno-Break, a 2D Sonic clone that tries to take it's own spin on Sonic with combat.<br />But I also like to work on other things, contact me if you'd like.</p>
-	<p><span style="text-decoration: underline;">Main Projects/Subpages</span></p>
-	<p><a title="Things you can buy!!!" href="https://chrisfurry.github.io/commissions">[Commissions]</a></p>
-	<p><a title="Characters I've made or bought." href="https://chrisfurry.github.io/characters">[My characters]</a></p>
-	<p><span style="text-decoration: underline;">Other Projects</span></p>
-	<p><span style="text-decoration: underline;"><a title="Saturn Sonic Mod" href="https://chrisfurry.github.io/srb23dblastsonic">[SRB2 MOD]: Saturn Sonic (Sonic 3D Blast)</a></span></p>
-	<p><span style="text-decoration: underline;">Places I'm on</span></p>
-	<p><a title="Sourcecode" href="https://github.com/ChrisFurry">Github</a> | <a title="Hell" href="https://twitter.com/ChrisFurry2005">Twitter</a> | <a title="ChrisFurry's Public Discord Server" href="https://discord.gg/hUVmurK9vQ" target="_blank">Discord Server</a> <br />Discord Tag: ChrisFurry#0925</p>
+	<div class="topweb"><h1><strong>ChrisFurry's dumb simple website</strong></h1></div>
+	<div class="thebg">
+		<p><span style="text-decoration: underline;">About me</span></p>
+		<p>I'm ChrisFurry (or just Chris), I'm a 17 year old who does art and programming.<br />I'm making a Indie game called Techno-Break, a 2D Sonic clone that tries to take it's own spin on Sonic with combat.<br />But I also like to work on other things, contact me if you'd like.</p>
+		<p><span style="text-decoration: underline;">Main Projects/Subpages</span></p>
+		<div class="imagelinks"><p><a title="Things you can buy!!!" href="https://chrisfurry.github.io/commissions"><img src="images/Commissions.png" alt="" /></a></p></div>
+		<div class="imagelinks"><p><a title="Characters I've made or bought." href="https://chrisfurry.github.io/characters"><img src="images/MyCharacters.png" alt="" /></a></p></div>
+		<p><span style="text-decoration: underline;">Other Projects</span></p>
+		<div class="projlinks"><p><span style="text-decoration: underline;"><a title="Saturn Sonic Mod" href="https://chrisfurry.github.io/srb23dblastsonic"><img src="images/SRB2SATURNSONIC.png" alt="" /></a></span></p></div>
+		</div>
+		<div class="bottomtext">		
+			<p><span style="text-decoration: underline;">Places I'm on</span><br /><a title="Where I post sourcecode" href="https://github.com/ChrisFurry">Github</a> | <a title="Hell" href="https://twitter.com/ChrisFurry2005">Twitter</a> | <a title="ChrisFurry's Public Discord Server" href="https://discord.gg/hUVmurK9vQ" target="_blank">Discord Server</a> <br />Discord Tag: ChrisFurry#0925</p>
+			<p><a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br /></p>
+			</div>
 	</body>
 </html>
