@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html>
 <style>
+@font-face { font-family: TB1; src: url('Technobreak8x16.ttf'); } 
+@font-face { font-family: TB2; src: url('Technobreak32x48.ttf'); } 
+h1 {
+	font-family: TB2;
+	font-smooth: never;
+	font-size: 48px;
+	word-spacing: 16px;
+	left: 0px;
+	right: 0px;
+}
+.p2 {
+	font-family: TB1;
+	font-smooth: never;
+	font-size: 16px;
+}
 body {
 	background-color: #242424;
 	text-align: center;
 	color: white;
 	text-shadow: 0px 2px black;
 	overflow-x: hidden;
-	overflow-y: hidden;
-	top: 0;
-	bottom: 0;
+	overflow-y: auto;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	font-family: TB1;
+	font-smooth: never;
+	font-size: 200%;
 }
 .thebg {
-	background-image: url("images/BG.png");
+	background-image: url("images/BG.gif");
 	background-position: center top;
 	overflow-x: hidden;
-	overflow-y: auto;
-	top: 0;
-	bottom: 0;
+	overflow-y: hidden;
 }
 .topweb {
 	text-align: center;
 	background-color: #242424;
+	height: 64px;
+	left: 0px;
+	right: 0px;
 }
 .imagelinks {
 	text-align: center;
-	transform: scale(2) translate(0px,32px);
-	height: 128px;
 	image-rendering: pixelated;
 }
 .projlinks {
 	text-align: center;
-	transform: scale(2) translate(0px,64px);
-	height: 256px;
 	image-rendering: pixelated;
 }
 .bottomtext {
 	text-align: center;
 	background-color: #242424;
+	position: absolute;
+	top: 0;
 }
 /* unvisited link */
 a:link {
@@ -61,19 +80,20 @@ color: white;
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
 	</head>
 <body>
-	<div class="topweb"><h1><strong>ChrisFurry's dumb simple website</strong></h1></div>
+	<div class="topweb"><h1>ChrisFurry's dumb simple website</h1></div>
 	<div class="thebg">
 		<p><span style="text-decoration: underline;">About me</span></p>
-		<p>I'm ChrisFurry (or just Chris), I'm a 17 year old who does art and programming.<br />I'm making a Indie game called Techno-Break, a 2D Sonic clone that tries to take it's own spin on Sonic with combat.<br />But I also like to work on other things, contact me if you'd like.</p>
+		<p>I'm ChrisFurry (or just Chris), a 17 year old who does art and programming. (GML, Godot, Lua)<br />I'm making a Indie game called Techno-Break, and working on a Sonic framework for Godot.<br />Contact me if you'd like, I'm always up to talk.</p>
 		<p><span style="text-decoration: underline;">Main Projects/Subpages</span></p>
-		<div class="imagelinks"><p><a title="Things you can buy!!!" href="https://chrisfurry.github.io/commissions"><img src="images/Commissions.png" alt="" /></a></p></div>
-		<div class="imagelinks"><p><a title="Characters I've made or bought." href="https://chrisfurry.github.io/characters"><img src="images/MyCharacters.png" alt="" /></a></p></div>
+		<div class="imagelinks"><a title="My super sexy game" href="https://chrisfurry.github.io/technobreak"><img src="images/Techno-Break.png" alt="" /></a></div>
+		<div class="imagelinks"><a title="Things you can buy!!!" href="https://chrisfurry.github.io/commissions"><img src="images/Commissions.png" alt="" /></a></div>
+		<div class="imagelinks"><a title="Characters I've made or bought." href="https://chrisfurry.github.io/characters"><img src="images/MyCharacters.png" alt="" /></a></div>
 		<p><span style="text-decoration: underline;">Other Projects</span></p>
-		<div class="projlinks"><p><span style="text-decoration: underline;"><a title="Saturn Sonic Mod" href="https://chrisfurry.github.io/srb23dblastsonic"><img src="images/SRB2SATURNSONIC.png" alt="" /></a></span></p></div>
+		<div class="projlinks"><span style="text-decoration: underline;"><a title="Saturn Sonic Mod" href="https://chrisfurry.github.io/srb23dblastsonic"><img src="images/SRB2SATURNSONIC.png" alt="" /></a></span></div>
 		</div>
-		<div class="bottomtext">		
-			<p><span style="text-decoration: underline;">Places I'm on</span><br /><a title="Where I post sourcecode" href="https://github.com/ChrisFurry">Github</a> | <a title="Hell" href="https://twitter.com/ChrisFurry2005">Twitter</a> | <a title="ChrisFurry's Public Discord Server" href="https://discord.gg/hUVmurK9vQ" target="_blank">Discord Server</a> <br />Discord Tag: ChrisFurry#0925</p>
-			<p><a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br /></p>
-			</div>
 	</body>
+<div class="bottomtext">		
+		<div class="p2"><span style="text-decoration: underline;">Places I'm on</span><br /><a title="Where I post sourcecode" href="https://github.com/ChrisFurry">Github</a> | <a title="Hell" href="https://twitter.com/ChrisFurry2005">Twitter</a> | <a title="ChrisFurry's Public Discord Server" href="https://discord.gg/hUVmurK9vQ" target="_blank">Discord Server</a> <br />Discord Tag: ChrisFurry#0925</div>
+		<div class="p2"><a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br /></div>
+		</div>
 </html>
