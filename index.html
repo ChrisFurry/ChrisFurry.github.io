@@ -1,110 +1,377 @@
 <!DOCTYPE html>
 <html>
 <style>
-@font-face { font-family: TB1; src: url('Technobreak8x16.ttf'); } 
-@font-face { font-family: TB2; src: url('Technobreak32x48.ttf'); } 
-h1 {
-	font-family: TB2;
-	font-smooth: never;
-	font-size: 48px;
-	word-spacing: 16px;
-	left: 0px;
-	right: 0px;
-}
-.p2 {
-	font-family: TB1;
-	font-smooth: never;
-	font-size: 16px;
-}
-body {
-	background-color: #242424;
-	text-align: center;
-	color: white;
-	text-shadow: 0px 2px black;
-	overflow-x: hidden;
-	overflow-y: auto;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	font-family: TB1;
-	font-smooth: never;
-	font-size: 200%;
-}
-.thebg {
-	background-image: url("images/BG.gif");
-	background-position: center top;
-	overflow-x: hidden;
-	overflow-y: hidden;
-}
-.topweb {
-	text-align: center;
-	background-color: #242424;
-	height: 64px;
-	left: 0px;
-	right: 0px;
-}
-.imagelinks {
-	text-align: center;
-	image-rendering: pixelated;
-}
-.projlinks {
-	text-align: center;
-	image-rendering: pixelated;
-}
-.bottomtext {
-	text-align: center;
-	background-color: #242424;
-	position: absolute;
-	top: 0;
-}
-/* unvisited link */
-a:link {
-color: #24b424;
-}
-/* visited link */
-a:visited {
-color: #b4006c;
-}
-/* mouse over link */
-a:hover {
-color: #48ff24;
-}
-/* selected link */
-a:active {
-color: white;
-}
+	@font-face { font-family: b8bitopp; src: url('fonts/8bitoperator.ttf'); } 
+	:root {
+		--color-bg:			#000000;
+		--color-text:		#000000;
+		--color-shadow:		#000000;
+
+		--banner-color:		#000000;
+
+		--image-invert:		0%;
+
+		--background-width:	100%;
+
+		--link-normal:		#000000;
+		--link-visited:		#000000;
+		--link-hover:		#000000;
+		--link-active:		#000000;
+	}
+	* {
+		transition:all 1s;
+		transition-timing-function: ease-in-out;
+
+		font-family: b8bitopp;
+		font-smooth: never;
+
+		image-rendering: pixelated;
+	}
+	body {
+		padding: 25px;
+
+		background-color: var(--color-bg);
+
+		color: var(--color-text);
+
+		font-size: 1.25vw;
+		text-align: center;
+		text-shadow: 
+		0.1vw 0.1vw var(--color-shadow),
+		0.1vw 0vw var(--color-shadow),
+		0vw 0.1vw var(--color-shadow);
+	}
+	/* Animation Keyframes */
+	@keyframes scroll-left {
+		0% {transform: translateX(0%);}
+		100% {transform: translateX(-50%);}
+	}
+	@keyframes section-bg-move {
+		0% {background-position-x: 0px; background-position-y: 0px;}
+		100% {background-position-x: -32px; background-position-y: -32px;}
+	}
+	/* Links */
+	a:link {
+		color: var(--link-normal);
+	}
+	a:visited {
+		color: var(--link-visited);
+	}
+	a:hover {
+		color: var(--link-hover);
+	}
+	a:active {
+		color: var(--link-active);
+	}
+	/* Background  */
+	.background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: var(--background-width);
+		height: 100%;
+
+		background-image: url('images/Background/Background.png');
+		background-attachment: fixed;
+		background-repeat: repeat-x;
+		background-position: center top;
+		background-size: auto 100%;
+
+		z-index: -20;
+
+		animation: scroll-left 40s infinite linear;
+		transition: opacity 1s;
+	}
+	.background.overlay {
+		background-image: url('images/Background/Background-Day.png');
+
+		opacity: var(--image-invert);
+
+		z-index: -20;
+
+		animation: scroll-left 40s infinite linear;
+	}
+	.background.backclouds {
+		background-image: url('images/Background/BackClouds.png');
+
+		z-index: -19;
+
+		animation: scroll-left 30s infinite linear;
+	}
+	.background.middleclouds {
+		background-image: url('images/Background/MiddleClouds.png');
+
+		z-index: -17;
+
+		animation: scroll-left 25s infinite linear;
+	}
+	.background.frontclouds {
+		background-image: url('images/Background/FrontClouds.png');
+
+		z-index: -15;
+
+		animation: scroll-left 15s infinite linear;
+	}
+	.background.backclouds-day {
+
+		background-image: url('images/Background/BackClouds-Day.png');
+		
+		opacity: var(--image-invert);
+
+		z-index: -18;
+
+		animation: scroll-left 30s infinite linear;
+	}
+	.background.middleclouds-day {
+		background-image: url('images/Background/MiddleClouds-Day.png');
+		
+		opacity: var(--image-invert);
+
+		z-index: -16;
+
+		animation: scroll-left 25s infinite linear;
+	}
+	.background.frontclouds-day {
+		background-image: url('images/Background/FrontClouds-Day.png');
+		
+		opacity: var(--image-invert);
+
+		z-index: -14;
+
+		animation: scroll-left 15s infinite linear;
+	}
+	/* Top Bar  */
+	.topbar-flexbox {
+		position:fixed;
+		left:0px;
+		right:0px;
+		top:0px;
+
+		height:8vh;
+
+		margin:auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background-color: var(--color-bg);
+
+		z-index: 100;
+	}
+	#logo {
+		width: auto;
+		height:8vh;
+		text-align: left;
+		align-content: start;
+		filter: invert(var(--image-invert));
+	}
+	.bottombar-warning {
+		position:fixed;
+		left:0;
+		bottom: 0;
+		width:100%;
+
+		background-color: var(--color-bg);
+
+		z-index: 100;
+	}
+	/* Website Sections  */
+	.banner {
+		background-color: #1f1f1f;
+
+		overflow: visible;
+
+		margin: auto;
+
+		width: 50%;
+		height: auto;
+
+		line-height: 1%;
+
+		object-fit: cover;
+
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: #00ff24;
+
+		filter: invert(var(--image-invert));
+
+		color: #ffffff;
+		text-shadow:
+		-0.1vw 0vw 0 #040404,
+		0.1vw 0vw 0 #040404,
+		0vw -0.1vw 0 #040404,
+		0vw 0.1vw 0 #040404,
+		-0.1vw -0.1vw 0 #040404,
+		0.1vw -0.1vw 0 #040404,
+		-0.1vw 0.1vw 0 #040404,
+		0.1vw 0.1vw 0 #040404;
+	}
+	.section {
+		overflow: hidden;
+
+		background-color: var(--banner-color);
+		background-image: url('images/BackBlock.png');
+		background-blend-mode: multiply;
+
+		max-width: 500px;
+
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: var(--color-text);
+
+		margin: auto;
+
+		animation: section-bg-move 1s infinite linear;
+	}
+	.section.aboutme {
+
+	}
+	.section.mainpages {
+
+	}
+	.section.projects {
+
+	}
+	.section.mods {
+		
+	}
+	.section.contact {
+		
+	}
+	.project-flexbox {
+		display: flex;
+		align-items: center;
+		width:100%;
+		justify-content: space-around;
+	}
+	.project-flexbox > div {
+		align-self: flex-start;
+
+		width:50%;
+	}
+
+	.imagelinks {
+		text-align: center;
+
+		image-rendering: pixelated;
+
+		width: 18vw;
+		height: auto;
+
+		border-style: solid;
+		border-color: white;
+		border-radius: 16px;
+	}
 </style>
 <head>
-	<title>ChrisFurry: The green furry dude</title>
+	<title>ChrisFurry</title>
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
-	</head>
+</head>
 <body>
-	<div class="topweb"><h1>ChrisFurry's dumb simple website</h1></div>
-	<p>Note to Self: update your site to look good ya doofus</p>
-	<div class="thebg">
-		<p><span style="text-decoration: underline;">About me</span></p>
-		<p>I'm ChrisFurry (or just Chris), a 18 year old who does art and programming. (GML, Godot, Lua)<br />I'm making a Indie game called Techno-Break, and working on a Sonic framework for Godot.<br />Contact me if you'd like, I'm always up to talk.</p>
-		<p><span style="text-decoration: underline;">Main Projects/Subpages</span></p>
-		<a href="https://chrisfurry.github.io/spritesheets">Public Spritesheets</a></div>
-		<div class="imagelinks"><a title="My super sexy game" href="https://chrisfurry.github.io/technobreak"><img src="images/Techno-Break.png" alt="" /></a></div>
-		<div class="imagelinks"><a title="Things you can buy!!!" href="https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing"><img src="images/Commissions.png" alt="" /></a></div>
-		<div class="imagelinks"><a title="Characters I've made or bought." href="https://toyhou.se/ChrisFurry"><img src="images/MyCharacters.png" alt="" /></a></div>
-		<p><span style="text-decoration: underline;">Other Projects</span></p>
-		<div class="projlinks"><span style="text-decoration: underline;"><a title="Saturn Sonic Mod" href="https://chrisfurry.github.io/srb23dblastsonic"><img src="images/SRB2SATURNSONIC.png" alt="" /></a></span><a title="Sonic Base Physics For Godot 4" href="https://github.com/ChrisFurry/SonicBasePhysics-Godot4"><img src="images/SonicBasePhysics.png" alt="" /></a></span></div>
-		<div class="projlinks"><a title="Sonic Base Physics For Godot 4" href="https://github.com/ChrisFurry/SonicBasePhysics2"><img src="images/SonicBasePhysics2.png" alt="" /></a></span></div>
+	<!-- Top Bar -->
+	<div class='topbar-flexbox'>
+		<!-- Logo (will redirect to homepage on sub-pages) -->
+		<div><img id='logo' src='images/Logo.svg'/></div>
+		<!-- Theme Toggle -->
+		<div><h3 id='timeofday'>If you see this message that means javascript isn't working.</h3></div>
+		<div><button id="theme">Toggle Time of Day</button></div>
+	</div>
+	<div class='bottombar-warning'><p>Hey! This website stores a cookie! It is only for your theme. (This message only shows up on this page)</p></div>
+	<!-- Background -->
+	<div class='background'></div>
+	<div class='background overlay'></div>
+	<div class='background backclouds'></div>
+	<div class='background backclouds-day'></div>
+	<div class='background middleclouds'></div>
+	<div class='background middleclouds-day'></div>
+	<div class='background frontclouds'></div>
+	<div class='background frontclouds-day'></div>
+	<!-- Banner Section -->
+	<br /><br /><br />
+	<section>
+		<div class='banner'>
+			<img src="images/Logo.svg" style="width:70%;" />
+			<h3 style="position: absolute; bottom:0%; margin:auto; text-align:center; width: 100%; font-size: 1.5vw; transition:none;">Amateur Pixel artist, Artist, Animator, and Programmer</h3>
+		</div><br />
+	</section>
+	<br />
+	<!-- About Me Section -->
+	<section class='section aboutme'>
+		<h2 style="position: relative; margin:auto; text-align:center; transition:none;">About me</h2>
+		<p>Hi, I'm ChrisFurry, but you can call me Chris.</p>
+		<p>I am an 18 year old, my hobbies include:</p>
+		<p>- Digital Art -</p>
+		<p>- Pixel Art -</p>
+		<p>- Programming -</p>
+		<p>- Game Developement -</p>
+		<p>- Website Creation -</p>
+		<p>If you would like to contact me for any reason, the information will be at the bottom of this page.</p>
+	</section><br />
+	<br />
+	<!-- Main Section -->
+	<section class='section mainpages'>
+		<h2 style="text-decoration-line:underline;">Main Pages</h2>
+		<a href='https://chrisfurry.github.io/portfolio/'><img class='imagelinks' src='images/Portfolio.png' alt='Portfolio' /></a>
+		<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='images/MyCharacters.png' alt='My Characters' /></a>
+		<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='images/Commissions.png' alt='Commissions' /></a>
+		<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='images/PublicSpritesheets.png' alt='Public Spritesheets' /></a><br />
+		<br />
+	</section><br/>
+	<!-- Projects Section -->
+	<p>Icons are being made! Text links are only wip!</p>
+	<section style="left:10%; width:80%; position:relative;">
+		<div class='project-flexbox'>
+			<div class='section projects'>
+				<h2 style="text-decoration-line:underline;">Main Projects</h2>
+				<p><s>Techno-Break</s></p>
+				<h3 style="text-decoration-line:underline;">Frameworks</h3>
+				<a href='https://github.com/ChrisFurry/NeedlemouseFramework-Master'>Gamemaker Needlemouse Framework [OBSOLETE]</a><br />
+				<a href='https://github.com/ChrisFurry/SonicBasePhysics-Godot4'>Godot Sonic Base Physics [OBSOLETE]</a><br />
+				<a href='https://github.com/ChrisFurry/SonicBasePhysics2'>Godot Sonic Base Physics 2 [NO ACTIVE SUPPORT]</a><br />
+				<h3 style="text-decoration-line:underline;">Plugins</h3>
+				<a href='https://github.com/ChrisFurry/godot-cfutils'>Godot ChrisFurry Utilities</a><br />
+				<p><s>Godot Complex Sprite [UNRELEASED]</s></p>
+			</div>
+			<div class='section mods'>
+				<h2 style="text-decoration-line:underline;">Mods</h2>
+				<h3 style="text-decoration-line:underline;"><a href="https://www.srb2.org/">Sonic Robo Blast 2</a></h3>
+				<a href='https://chrisfurry.github.io/srb23dblastsonic/'>Saturn Sonic (Sonic 3D Blast, Character)</a>
+			</div>
 		</div>
-	</body>
-<div class="bottomtext">		
-		<div class="p2"><span style="text-decoration: underline;">Places I'm on</span><br /><a title="Where I post sourcecode" href="https://github.com/ChrisFurry">Github</a> | <a title="Host" href="https://cohost.org/ChrisFurry">CoHost</a>
-		<br /><a title="Ink" href="https://inkblot.art/profile/chrisfurry2005">Inkblot</a> | <a title="Itching" href="https://chrisfurry.itch.io/">Itch</a> | <a title="Sound" href="https://soundcloud.com/artman74864">Soundcloud</a>
-		<br /><a title="Kofi" href="https://ko-fi.com/chrisfurry">Ko-Fi</a>
-		<br />Discord: chrisfurry
-		<br />Matrix: @chrisfurry:matrix.org
-		<br />Email: ChrisFurry2005@gmail.com</div>
-		<div class="p2"><a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br /></div>
-		</div>
+	</section><br />
+	<section class='section contact'>
+		<h2 style="text-decoration-line:underline;">Contact Information</h2>
+		<a title="Github" href="https://github.com/ChrisFurry">Github</a> | <a title="Cohost" href="https://cohost.org/ChrisFurry">CoHost</a>
+		<br /><a title="Itch.io" href="https://chrisfurry.itch.io/">Itch.io</a> | <a title="SoundCloud" href="https://soundcloud.com/artman74864">Soundcloud (inactive)</a>
+		<br /><a title="Kofi" href="https://ko-fi.com/chrisfurry">Ko-Fi (For donations)</a>
+		<p>Discord: chrisfurry</p>
+		<p>Matrix: @chrisfurry:matrix.org</p>
+		<p>Email: ChrisFurry2005@gmail.com</p>
+		<h3 style="text-decoration-line:underline;">Other Links</h3>
+		<a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a>
+	</section><br />
+	<br />
+	<!-- JavaScript -->
+	<script src='Theme.js'></script>
+	<script>
+		rescale_background();
+
+		addEventListener("resize", (event) => {
+			rescale_background();
+		});
+		function rescale_background() {
+			let windowSizeMul = (window.innerHeight / 480);
+			let windowScreenWid = 320 * windowSizeMul;
+			let windowScreenFinal = Math.ceil(window.innerWidth / windowScreenWid) * 2 * windowScreenWid;
+			style.setProperty('--background-width',	windowScreenFinal + 'px');
+		}
+	</script>
+</body>
 </html>

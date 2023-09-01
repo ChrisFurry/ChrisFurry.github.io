@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<style>
+	@font-face { font-family: b8bitopp; src: url('../fonts/8bitoperator.ttf'); } 
+	:root {
+		--color-bg:			#000000;
+		--color-text:		#000000;
+		--color-shadow:		#000000;
+
+		--banner-color:		#000000;
+
+		--image-invert:		0%;
+
+		--background-width:	100%;
+
+		--link-normal:		#000000;
+		--link-visited:		#000000;
+		--link-hover:		#000000;
+		--link-active:		#000000;
+	}
+	* {
+		transition:all 1s;
+		transition-timing-function: ease-in-out;
+
+		font-family: b8bitopp;
+		font-smooth: never;
+
+		image-rendering: pixelated;
+	}
+	body {
+		padding: 25px;
+
+		background-color: var(--color-bg);
+
+		color: var(--color-text);
+
+		font-size: 1.25vw;
+		text-align: center;
+		text-shadow: 
+		0.1vw 0.1vw var(--color-shadow),
+		0.1vw 0vw var(--color-shadow),
+		0vw 0.1vw var(--color-shadow);
+	}
+	/* Top Bar  */
+	.topbar-flexbox {
+		position:fixed;
+		left:0px;
+		right:0px;
+		top:0px;
+
+		height:8vh;
+
+		margin:auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background-color: var(--color-bg);
+
+		z-index: 100;
+	}
+	#logo {
+		width: auto;
+		height:8vh;
+		text-align: left;
+		align-content: start;
+		filter: invert(var(--image-invert));
+	}
+	/* Image Flexbox */
+	.section-flexbox {
+		display: flex;
+		align-items: center;
+		width:100%;
+		justify-content: space-around;
+	}
+	.section-flexbox > div {
+		align-self: flex-start;
+	}
+</style>
+<head>
+	<title>ChrisFurry Portfolio</title>
+	<link rel="icon" type="image/x-icon" href="icon.ico" />
+</head>
+<body>
+	<!-- Top Bar -->
+	<div class='topbar-flexbox'>
+		<!-- Logo (will redirect to homepage on sub-pages) -->
+		<div><a href='https://chrisfurry.github.io/'><img id='logo' src='../images/Logo.svg'/></a></div>
+		<!-- Theme Toggle -->
+		<div><h3 id='timeofday'>If you see this message that means javascript isn't working.</h3></div>
+		<div><button id="theme">Toggle Time of Day</button></div>
+	</div>
+	<!-- Pixel Art Examples -->
+	<br /><br /><br />
+	<h2>This Page is a WIP! I wanted to have this here anyways so I can update it later, for now here's a chunk of the art I can show.</h2>
+	<h1>Pixel Art</h1>
+	<div class='section-flexbox'>
+		<div><img src='./images/Orbie.gif'></div>
+		<div><img src='./images/Heart.gif'></div>
+		<div><img src='./images/ChrisCaveStory.gif'></div>
+		<div><img src='./images/Face-export.png'></div>
+	</div>
+	<!-- Digital Art Examples -->
+	<br />
+	<h1>Digital Art</h1>
+	<section class='section-flexbox'>
+		<div><img src='./images/ChrisCaveStoryFace.png'></div>
+		<div><img src='./images/DeltaChris.png'></div>
+	</section>
+	<!-- Animation Examples -->
+	<br />
+	<h1>Animations</h1>
+	<section class='section-flexbox'>
+		<div><img src='./images/Victory.gif'></div>
+		<div><img src='./images/PitJump.gif'></div>
+		<div><img src='./images/Stomp.gif'></div>
+	</section>
+	<!-- JavaScript -->
+	<script src='../Theme.js'></script>
+</body>
+</html>
