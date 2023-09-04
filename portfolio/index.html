@@ -41,6 +41,11 @@
 		0.1vw 0vw var(--color-shadow),
 		0vw 0.1vw var(--color-shadow);
 	}
+	/* Animations */
+	@keyframes section-bg-move {
+		0% {background-position-x: 0px; background-position-y: 0px;}
+		100% {background-position-x: -32px; background-position-y: -32px;}
+	}
 	/* Top Bar  */
 	.topbar-flexbox {
 		position:fixed;
@@ -72,10 +77,29 @@
 		display: flex;
 		align-items: center;
 		width:100%;
-		justify-content: space-around;
+		justify-content: center;
 	}
 	.section-flexbox > div {
 		align-self: flex-start;
+	}
+	.section {
+		overflow: hidden;
+
+		background-color: var(--banner-color);
+		background-image: url('../images/BackBlock.png');
+		background-blend-mode: multiply;
+
+		width: auto;
+		display: inline-block;
+
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: var(--color-text);
+
+		margin: auto;
+
+		animation: section-bg-move 1s infinite linear;
 	}
 </style>
 <head>
@@ -94,28 +118,55 @@
 	<!-- Pixel Art Examples -->
 	<br /><br /><br />
 	<h2>This Page is a WIP! I wanted to have this here anyways so I can update it later, for now here's a chunk of the art I can show.</h2>
-	<h1>Pixel Art</h1>
-	<div class='section-flexbox'>
-		<div><img src='./images/Orbie.gif'></div>
-		<div><img src='./images/Heart.gif'></div>
-		<div><img src='./images/ChrisCaveStory.gif'></div>
-		<div><img src='./images/Face-export.png'></div>
+	<div class='section'>
+		<h1>Pixel Art</h1>
+		<h3>Character/Object Animations</h3>
+		<div class='section-flexbox'>
+			<div style="align-self: flex-end;"><img src='./images/Mach3.gif'></div>
+			<div><img src='./images/Skid.gif'></div>
+			<div style="align-self: flex-end;"><img src='./images/Pushing.gif'></div>
+		</div>
+		<div class='section-flexbox'>
+			<div><img src='./images/ChrisHeadSpin.gif'></div>
+			<div style="align-self: center;"><img src='./images/Orbie.gif'></div>
+		</div>
+		<h3>Effects</h3>
+		<div class='section-flexbox'>
+			<div><img src='./images/Explosion.gif'></div>
+			<div><img src='./images/Effects2.gif'></div>
+			<div style="align-self: center;"><img src='./images/Effects.gif'></div>
+		</div>
+		<h3>3D to Pixel Art</h3>
+		<div class='section-flexbox'>
+			<div style="align-self: center;"><img src='./images/Heart.gif'></div>
+			<div style="align-self: center;"><img src='./images/Star.gif'></div>
+			<div><img src='./images/OrbieShield.gif'></div>
+		</div>
+		<h3>Style mimicking</h3>
+		<div class='section-flexbox'>
+			<div><img src='./images/ChrisCaveStory.gif'></div>
+			<div><img src='./images/Face-export.png'></div>
+		</div>
 	</div>
 	<!-- Digital Art Examples -->
 	<br />
-	<h1>Digital Art</h1>
-	<section class='section-flexbox'>
-		<div><img src='./images/ChrisCaveStoryFace.png'></div>
-		<div><img src='./images/DeltaChris.png'></div>
-	</section>
+	<div class='section'>
+		<h1>Digital Art</h1>
+		<section class='section-flexbox'>
+			<div><img src='./images/ChrisCaveStoryFace.png'></div>
+			<div><img src='./images/DeltaChris.png'></div>
+		</section>
+	</div>
 	<!-- Animation Examples -->
 	<br />
-	<h1>Animations</h1>
-	<section class='section-flexbox'>
-		<div><img src='./images/Victory.gif'></div>
-		<div><img src='./images/PitJump.gif'></div>
-		<div><img src='./images/Stomp.gif'></div>
-	</section>
+	<div class='section'>
+		<h1>Animations</h1>
+		<section class='section-flexbox'>
+			<div><img src='./images/Victory.gif'></div>
+			<div><img src='./images/PitJump.gif'></div>
+			<div><img src='./images/Stomp.gif'></div>
+		</section>
+	</div>
 	<!-- JavaScript -->
 	<script src='../Theme.js'></script>
 </body>
