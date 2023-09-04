@@ -1,24 +1,170 @@
 <!DOCTYPE html>
 <html>
+<style>
+	@font-face { font-family: b8bitopp; src: url('../fonts/8bitoperator.ttf'); } 
+	:root {
+		--color-bg:			#000000;
+		--color-text:		#000000;
+		--color-shadow:		#000000;
+
+		--banner-color:		#000000;
+
+		--image-invert:		0%;
+
+		--background-width:	100%;
+
+		--link-normal:		#000000;
+		--link-visited:		#000000;
+		--link-hover:		#000000;
+		--link-active:		#000000;
+	}
+	* {
+		transition:all 1s;
+		transition-timing-function: ease-in-out;
+
+		font-family: b8bitopp;
+		font-smooth: never;
+
+		image-rendering: pixelated;
+	}
+	body {
+		padding: 25px;
+
+		background-color: var(--color-bg);
+
+		color: var(--color-text);
+
+		font-size: 1.25vw;
+		text-align: center;
+		text-shadow: 
+		0.1vw 0.1vw var(--color-shadow),
+		0.1vw 0vw var(--color-shadow),
+		0vw 0.1vw var(--color-shadow);
+		line-height: 10px;
+	}
+	/* Animations */
+	@keyframes section-bg-move {
+		0% {background-position-x: 0px; background-position-y: 0px;}
+		100% {background-position-x: -32px; background-position-y: -32px;}
+	}
+	/* Top Bar  */
+	.topbar-flexbox {
+		position:fixed;
+		left:0px;
+		right:0px;
+		top:0px;
+
+		height:8vh;
+
+		margin:auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background-color: var(--color-bg);
+
+		z-index: 100;
+	}
+	#logo {
+		width: auto;
+		height:8vh;
+		text-align: left;
+		align-content: start;
+		filter: invert(var(--image-invert));
+	}
+	.section {
+		overflow: hidden;
+
+		background-color: var(--banner-color);
+		background-image: url('../images/BackBlock.png');
+		background-blend-mode: multiply;
+
+		width: 70%;
+
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: var(--color-text);
+
+		margin: auto;
+
+		animation: section-bg-move 1s infinite linear;
+	}
+	/* Image Flexbox */
+	.section-flexbox {
+		display: flex;
+		align-items: center;
+		width:100%;
+		justify-content: space-around;
+	}
+	.section-flexbox > div {
+		align-self: flex-start;
+	}
+	.imagelinks {
+		text-align: center;
+
+		image-rendering: pixelated;
+
+		width: 100%;
+		max-width: 128px;
+		height: auto;
+
+		border-style: solid;
+		border-color: white;
+		border-radius: 16px;
+	}
+</style>
 <head>
-	<title>ChrisFurry's public Spritesheets</title>
+	<title>Public Spritesheets</title>
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
 	</head>
 <body>
-	Sonic Museum: First Person Mini Sonic<br />
-	<img src="Sonic Museum-Sheet.png" alt="" />
-	<br />Random Sonic Edits #1<br />
-	<img src="RSonic1.png" alt="" />
-	<br />Random Sonic.EXE shit #1<br />
-	<img src="SonicExe1.png" alt="" />
-	<br />Needlemouse Sonic V1<br />
-	For a framework that was gamemaker and bad, I was planning to use Sonic 1 sprites in Needlemouse Godot'd before that was silently canned.(use Sonic Worlds Next instead)<br />
-	<img src="NeedlemouseSonic.png" alt="" />
-	<br />Sonic 3: Awesom Edit :) - INCOMPLETE<br />
-	Want to contribute? Or just finished the sheet for me? Contact me on Discord and I'll update this page: chrisfurry<br />
-	<img src="Sonic3AwesomEdit.png" alt="" />
-	</body>
+	<!-- Top Bar -->
+	<div class='topbar-flexbox'>
+		<!-- Logo (will redirect to homepage on sub-pages) -->
+		<div><a href='https://chrisfurry.github.io/'><img id='logo' src='../images/Logo.svg'/></a></div>
+		<!-- Theme Toggle -->
+		<div><h3 id='timeofday'>If you see this message that means javascript isn't working.</h3></div>
+		<div><button id="theme">Toggle Time of Day</button></div>
+	</div><br />
+	<br /><br /><br /><br />
+	<!-- Sonic Sheets -->
+	<div class='section'>
+		<h2>Sonic Sheets</h2>
+		<div class='section-flexbox'>
+			<div>
+				<a href='Sonic Museum-Sheet.png'><img class='imagelinks' src='icons/MuseumSonic.png' /></a>
+				<p>Museum Sonic</p>
+			</div>
+			<div>
+				<a href='RSonic1.png'><img class='imagelinks' src='icons/RSonic1.png' /></a>
+				<p>Random Sonic Edit 1</p>
+			</div>
+			<div>
+				<a href='NeedlemouseSonic.png'><img class='imagelinks' src='icons/NeedleMousev1.png' /></a>
+				<p>NeedleMouse Sonic V1</p>
+				<p><u>Contributors</u></p>
+				<p>NeigePastel</p>
+				<p>ImaDomey</p>
+			</div>
+			<div>
+				<a href='SonicExe1.png'><img class='imagelinks' src='icons/SonicExe1.png' /></a>
+				<p>Sonic.exe edit 1</p>
+			</div>
+			<div>
+				<a href='Sonic3AwesomEdit.png'><img class='imagelinks' src='icons/Sonic3AwsomeEdit.png' /></a>
+				<p>Sonic 3: Awesom Edit :)</p>
+				<p>!!INCOMPLETE!!</p>
+				<p><u>Contributors</u></p>
+				<p>NeigePastel</p>
+			</div>
+		</div>
+	</div>
+	<!-- JavaScript -->
+	<script src='../Theme.js'></script>
+</body>
 </html>
