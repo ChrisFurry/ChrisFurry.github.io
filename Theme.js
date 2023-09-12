@@ -50,7 +50,7 @@ function change_theme(is_dark) {
 function get_read_cookies() {
 	let cook = document.cookie;
 	if(cook == null){return;}
-	darkTheme = (get_cookie_variable(cook,'lighttheme') == 'false');
+	darkTheme = (get_cookie_variable(cook,'lighttheme') == 'false' || get_cookie_variable(cook,'lighttheme') == '');
 }
 function set_cookies() {
 	document.cookie = "lighttheme="+!darkTheme+";Path='/';SameSite=None;Secure;";
