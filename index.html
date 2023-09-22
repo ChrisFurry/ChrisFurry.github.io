@@ -140,32 +140,6 @@
 
 		animation: scroll-left 15s infinite linear;
 	}
-	/* Top Bar  */
-	.topbar-flexbox {
-		position:fixed;
-		left:0px;
-		right:0px;
-		top:0px;
-
-		height:8vh;
-
-		margin:auto;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-
-		background-color: var(--color-bg);
-
-		z-index: 100;
-	}
-	#logo {
-		width: auto;
-		height:8vh;
-		text-align: left;
-		align-content: start;
-		filter: invert(var(--image-invert));
-	}
 	.bottombar-warning {
 		position:fixed;
 		left:0;
@@ -216,7 +190,7 @@
 		background-image: url('images/BackBlock.png');
 		background-blend-mode: multiply;
 
-		max-width: 500px;
+		max-width: 50vw;
 
 		border-radius: 10px;
 		border-style: solid;
@@ -276,6 +250,7 @@
 </head>
 <body>
 	<!-- Top Bar -->
+	<link rel="stylesheet" href="topbar.css">
 	<div class='topbar-flexbox'>
 		<!-- Logo (will redirect to homepage on sub-pages) -->
 		<div><img id='logo' src='images/Logo.svg'/></div>

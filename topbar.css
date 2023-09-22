@@ -1,0 +1,28 @@
+/* Top Bar  */
+.topbar-flexbox {
+	position:fixed;
+	left:0px;
+	right:0px;
+	top:0px;
+
+	font-size:18px;
+
+	height:60px;
+
+	margin:auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: var(--color-bg);
+
+	z-index: 100;
+}
+#logo {
+	width: auto;
+	height:100%;
+	text-align: left;
+	align-content: start;
+	filter: invert(var(--image-invert));
+}
