@@ -18,6 +18,8 @@
 	background-color: var(--color-bg);
 
 	z-index: 100;
+
+	overflow: hidden;
 }
 #logo {
 	width: auto;
