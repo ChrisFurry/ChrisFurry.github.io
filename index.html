@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-	@font-face { font-family: b8bitopp; src: url('fonts/8bitoperator.ttf'); } 
+	@font-face { font-family: b8bitopp; src: url('Assets/fonts/8bitoperator.ttf'); } 
 	:root {
 		--color-bg:			#000000;
 		--color-text:		#000000;
@@ -71,7 +71,7 @@
 		width: var(--background-width);
 		height: 100%;
 
-		background-image: url('images/Background/Background.png');
+		background-image: url('Assets/images/Background/Background.png');
 		background-attachment: fixed;
 		background-repeat: repeat-x;
 		background-position: center top;
@@ -83,7 +83,7 @@
 		transition: opacity 1s;
 	}
 	.background.overlay {
-		background-image: url('images/Background/Background-Day.png');
+		background-image: url('Assets/images/Background/Background-Day.png');
 
 		opacity: var(--image-invert);
 
@@ -92,21 +92,21 @@
 		animation: scroll-left 40s infinite linear;
 	}
 	.background.backclouds {
-		background-image: url('images/Background/BackClouds.png');
+		background-image: url('Assets/images/Background/BackClouds.png');
 
 		z-index: -19;
 
 		animation: scroll-left 30s infinite linear;
 	}
 	.background.middleclouds {
-		background-image: url('images/Background/MiddleClouds.png');
+		background-image: url('Assets/images/Background/MiddleClouds.png');
 
 		z-index: -17;
 
 		animation: scroll-left 25s infinite linear;
 	}
 	.background.frontclouds {
-		background-image: url('images/Background/FrontClouds.png');
+		background-image: url('Assets/images/Background/FrontClouds.png');
 
 		z-index: -15;
 
@@ -114,7 +114,7 @@
 	}
 	.background.backclouds-day {
 
-		background-image: url('images/Background/BackClouds-Day.png');
+		background-image: url('Assets/images/Background/BackClouds-Day.png');
 		
 		opacity: var(--image-invert);
 
@@ -123,7 +123,7 @@
 		animation: scroll-left 30s infinite linear;
 	}
 	.background.middleclouds-day {
-		background-image: url('images/Background/MiddleClouds-Day.png');
+		background-image: url('Assets/images/Background/MiddleClouds-Day.png');
 		
 		opacity: var(--image-invert);
 
@@ -132,7 +132,7 @@
 		animation: scroll-left 25s infinite linear;
 	}
 	.background.frontclouds-day {
-		background-image: url('images/Background/FrontClouds-Day.png');
+		background-image: url('Assets/images/Background/FrontClouds-Day.png');
 		
 		opacity: var(--image-invert);
 
@@ -186,8 +186,7 @@
 	.section {
 		overflow: hidden;
 
-		background-color: var(--banner-color);
-		background-image: url('images/BackBlock.png');
+		background-image: url('Assets/images/BackBlock.png');
 		background-blend-mode: multiply;
 
 		max-width: 50vw;
@@ -251,13 +250,8 @@
 <body>
 	<!-- Top Bar -->
 	<link rel="stylesheet" href="topbar.css">
-	<div class='topbar-flexbox'>
-		<!-- Logo (will redirect to homepage on sub-pages) -->
-		<div><img id='logo' src='images/Logo.png'/></div>
-		<!-- Theme Toggle -->
-		<div><h3 id='timeofday'>If you see this message that means javascript isn't working.</h3></div>
-		<div><button id="theme">Toggle Time of Day</button></div>
-	</div>
+	<img id="theme" src="Assets/buttons/Theme-Nighttime.png" />
+	<!-- Bottom Warning -->
 	<div class='bottombar-warning'><p>Hey! This website stores a cookie! It is only for your theme. (This message only shows up on this page)</p></div>
 	<!-- Background -->
 	<div class='background'></div>
@@ -272,7 +266,7 @@
 	<br /><br /><br />
 	<section>
 		<div class='banner'>
-			<img src="images/LogoAnimated.gif" style="width:70%;" />
+			<img src="Assets/images/LogoAnimated.gif" style="width:70%;" />
 			<h3 style="position: absolute; bottom:0%; margin:auto; text-align:center; width: 100%; font-size: 1.5vw; transition:none;">Amateur Pixel artist, Artist, Animator, and Programmer</h3>
 		</div><br />
 	</section>
@@ -293,10 +287,10 @@
 	<!-- Main Section -->
 	<section class='section mainpages'>
 		<h2 style="text-decoration-line:underline;">Main Pages</h2>
-		<a href='https://chrisfurry.github.io/portfolio/'><img class='imagelinks' src='images/Portfolio.png' alt='Portfolio' /></a>
-		<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='images/MyCharacters.png' alt='My Characters' /></a>
-		<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='images/Commissions.png' alt='Commissions' /></a>
-		<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='images/PublicSpritesheets.png' alt='Public Spritesheets' /></a><br />
+		<a href='https://chrisfurry.github.io/portfolio/'><img class='imagelinks' src='Assets/buttons/Portfolio.png' alt='Portfolio' /></a>
+		<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='Assets/buttons/MyCharacters.png' alt='My Characters' /></a>
+		<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='Assets/buttons/Commissions.png' alt='Commissions' /></a>
+		<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='Assets/buttons/PublicSpritesheets.png' alt='Public Spritesheets' /></a><br />
 		<br />
 	</section><br/>
 	<!-- Projects Section -->
@@ -330,10 +324,10 @@
 		<br /><a title="Itch.io" href="https://chrisfurry.itch.io/">Itch.io</a> | <a title="Bluesky" href="https://bsky.app/profile/chrisfurry.bsky.social">Bluesky</a>
 		<br /><a title="Kofi" href="https://ko-fi.com/chrisfurry">Ko-Fi (For donations)</a>
 		<p>Discord: chrisfurry</p>
-		<p>Matrix: @chrisfurry:matrix.org</p>
 		<p>Email: ChrisFurry2005@gmail.com</p>
 		<h3 style="text-decoration-line:underline;">Other Links</h3>
-		<a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a>
+		<a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br />
+		<br />
 	</section><br />
 	<br />
 	<!-- JavaScript -->

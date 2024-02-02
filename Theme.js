@@ -16,35 +16,37 @@ toggleThemeBtn.addEventListener('click', () => {
 function change_theme(is_dark) {
 	if(is_dark != true && is_dark != false){is_dark = true};
 	if(is_dark){
-		style.setProperty('--color-bg',		'#200020')
+		style.setProperty('--color-bg',		'#200020');
 
-		style.setProperty('--color-text',	'#ffffff')
-		style.setProperty('--color-shadow',	'#040404')
+		style.setProperty('--color-text',	'#ffffff');
+		style.setProperty('--color-shadow',	'#040404');
 
-		style.setProperty('--banner-color',	'#005511')
-		style.setProperty('--image-invert',	'0%')
+		style.setProperty('--banner-color',	'#005511');
+		style.setProperty('--image-invert',	'0%');
 
-		style.setProperty('--link-normal',	'#24b424')
-		style.setProperty('--link-visited',	'#90b4ff')
-		style.setProperty('--link-hover',	'#6cff24')
-		style.setProperty('--link-active',	'#ff9024')
+		style.setProperty('--link-normal',	'#24b424');
+		style.setProperty('--link-visited',	'#90b4ff');
+		style.setProperty('--link-hover',	'#6cff24');
+		style.setProperty('--link-active',	'#ff9024');
 
-		document.getElementById("timeofday").textContent="It is currently Night!";
+		toggleThemeBtn.src = "https://chrisfurry.github.io/Assets/buttons/Theme-Nighttime.png";
+		//document.getElementById("timeofday").textContent="It is currently Night!";
 	}else{
-		style.setProperty('--color-bg',		'#ACACFC')
+		style.setProperty('--color-bg',		'#ACACFC');
 
-		style.setProperty('--color-text',	'#000000')
-		style.setProperty('--color-shadow',	'#CCCCFF')
+		style.setProperty('--color-text',	'#000000');
+		style.setProperty('--color-shadow',	'#CCCCFF');
 
-		style.setProperty('--banner-color',	'#ED63FF')
-		style.setProperty('--image-invert',	'100%')
+		style.setProperty('--banner-color',	'#ED63FF');
+		style.setProperty('--image-invert',	'100%');
 
-		style.setProperty('--link-normal',	'#006c24')
-		style.setProperty('--link-visited',	'#242490')
-		style.setProperty('--link-hover',	'#24b424')
-		style.setProperty('--link-active',	'#ff0048')
+		style.setProperty('--link-normal',	'#006c24');
+		style.setProperty('--link-visited',	'#242490');
+		style.setProperty('--link-hover',	'#24b424');
+		style.setProperty('--link-active',	'#ff0048');
 
-		document.getElementById("timeofday").textContent="It is currently Day!";
+		toggleThemeBtn.src = "https://chrisfurry.github.io/Assets/buttons/Theme-Daylight.png";
+		//document.getElementById("timeofday").textContent="It is currently Day!";
 	}
 }
 function get_read_cookies() {
