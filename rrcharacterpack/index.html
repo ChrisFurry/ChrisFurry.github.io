@@ -1,4 +1,135 @@
 <!DOCTYPE html>
+<style>
+	@font-face { font-family: andes_font; src: url('Assets/Fonts/Andes.ttf'); } 
+	@font-face { font-family: normal_font; src: url('Assets/Fonts/m6x11.ttf'); } 
+	@font-face { font-family: small_font; src: url('Assets/Fonts/om_thick_plain.ttf'); } 
+	:root {
+		--karter1_speed:2s;
+		--karter2_speed:5s;
+		--karter3_speed:3s;
+		--karter4_speed:2.5s;
+	}
+	* {
+		font-family: normal_font;
+		font-size:32px;
+		font-smooth: never;
+
+		image-rendering: pixelated;
+	}
+	body {
+		align-content: center;
+		text-align: center;
+		color:white;
+		text-shadow:
+		2px 2px black,
+		2px 0px black,
+		0px 2px black;
+		background-image:url("Assets/Images/M_XTRABG.png");
+		background-size: cover;
+	}
+	h1 {
+		font-size:64px;
+		font-family: andes_font;
+	}
+	#BackgroundOverlay {
+		position:fixed;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		width:auto;
+		height:auto;
+		z-index:-100;
+
+		mix-blend-mode: difference;
+
+		background-image:url(Assets/Images/BGUNLSC.png);
+		background-size:cover;
+	}
+	.page_holder {
+		width:900px;
+		margin: auto;
+		padding: 0px;
+		box-sizing: border-box;
+
+		border: 4px solid #000080;
+
+		
+		left:0;
+		top:0;
+		right:0;
+		background-image:url("Assets/Images/SlideBG.png");
+		
+	}
+	.black_top {
+		margin: auto;
+		padding: 0px;
+		left:0;
+		top:0;
+		bottom:0;
+		right:0;
+
+		background-color: black;
+	}
+	.black_overlay {
+		margin: auto;
+		padding: 0px;
+		left:0;
+		top:0;
+		bottom:0;
+		right:0;
+
+		height:112px;
+		z-index:100;
+
+		mix-blend-mode: darken;
+
+		animation:ani_black_move 5s infinite linear;
+	}
+	#wrong_game {
+		position:relative;
+		margin: auto;
+		padding: 0px;
+		z-index:20;
+	}
+	#wrong_game_bg {
+		position:absolute;
+		top:8px;
+		left:8px;
+		z-index:0;
+	}
+	#logo {
+		width:644px;
+
+		background-image:url("Assets/Images/Electric.gif");
+		background-size: cover;
+		background-blend-mode:lighten;
+	}
+	.karter {
+	}
+	.small_text {
+		font-family: small_font;
+		font-size:16px;
+		text-shadow:
+		0px -2px black,
+		-2px -2px black,
+		-2px 0px black,
+		-2px 2px black,
+		0px 2px black,
+		2px 2px black,
+		2px 0px black,
+		2px -2px black;
+		
+	}
+	@keyframes ani_black_move {
+		0% {transform: translateX(0px);}
+		100% {transform: translateX(-32px);}
+	}
+	@keyframes ani_wrongg_kart {
+		0% {transform: translateX(-336px);}
+		100% {transform: translateX(336px);}
+	}
+</style>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -6,11 +137,69 @@
 	<title>CF's Character Pack</title>
 </head>
 <body>
-	<h1>This page is a work in progress, I just wanted to be able to release the characters.</h1>
-	<h2>This pack includes Chirs, Ruby, and another racer...</h2>
-	<img src="Assets/Images/Chris.gif" />
-	<img src="Assets/Images/Ruby.gif" />
-	<img src="Assets/Images/Secret.gif" />
-	<a href='https://chrisfurry.github.io/Downloads/KC_ChrisFurryCharacterPack_V1.pk3'>[Download Latest]</a>
+	<div id="BackgroundOverlay"></div>
+	<div class="page_holder">
+		<div class="black_top">
+			<a href="https://chrisfurry.github.io">[Back to homepage]</a>
+			<br />
+			<img id="logo" src="Assets/Images/ChrisCharPack.png" />
+			<br />
+		</div>
+		<div style="overflow:hidden;">
+		<img class="black_overlay" src="Assets/Images/MOTDBG.png" />
+		</div>
+		<div style="overflow:hidden; position:relative; width:336px; height:216px;margin: auto;padding: 0px;top:-120px;">
+			<img id="wrong_game" src="Assets/Images/WEIRDRES.png" />
+			<img id="wrong_game_bg" src="Assets/Images/BG_MPS2.png" />
+			<img id="karter1" class="karter" style="position:absolute;top:16px;animation:ani_wrongg_kart var(--karter1_speed) infinite linear;" src="Assets/Racists/Chris.gif" />
+			<img id="karter2" class="karter" style="position:absolute;top:72px;animation:ani_wrongg_kart var(--karter2_speed) infinite linear;" src="Assets/Racists/Chris.gif" />
+			<img id="karter3" class="karter" style="position:absolute;top:94px;animation:ani_wrongg_kart var(--karter3_speed) infinite linear;" src="Assets/Racists/Chris.gif" />
+			<img id="karter4" class="karter" style="position:absolute;top:120px;animation:ani_wrongg_kart var(--karter4_speed) infinite linear;" src="Assets/Racists/Chris.gif" />
+		</div>
+		<h1>Latest, from EggTV!</h1>
+		<p>Seems like some new racers have joined the party, coming in small shapes and sizes!</p>
+		<p>Join Chris, Ruby, Lawyer Mario, Super Sonic, and The Worst Mario as they race the SEGA cast!</p>
+		<p>Be warned, there may be more than you asked for...</p><br />
+		<div style="color:yellow;">
+			<u>Credits</u>
+			<p class="small_text">Spritework by ChrisFurry</p>
+			<p class="small_text">Invincible Theme by <a href="https://soundcloud.com/user-746521090">Jzee+PoZitron</a> (Not used in game yet)</p>
+			<p class="small_text">Thank you to SuperSonicNK and RetroStation for code help!!</p>
+		</div><br />
+		<a href='https://mega.nz/folder/kcZVxTTD#IBaOpfSCLnd9feiFAyAeIg'>[Download Latest]</a><br />
+		<br />
+		<div style="color:grey;">
+			<u>Change Log for V1.5</u>
+			<p class="small_text">Added Lawyer Mario and Super Sonic</p>
+			<p class="small_text">Credits print into console</p>
+			<p class="small_text">Super Sonic gets a gimmick<br />(Off by default, variable is sueprsonic_bullshit)<br />(Warning, buggy)</p>
+			<u>Planned for V2.0</u>
+			<p class="small_text">* Invincible music implimentation and</p>
+			<p class="small_text">* Stop Super Sonic from constantly playing invincible music.</p>
+			<p class="small_text" style="font-size:8px;">- If MusicChange Lua Hook is added</p>
+			<p class="small_text">* Gamemode: Super Panic</p>
+			<p class="small_text">* Chris and Ruby sprite touch-ups</p>
+			<p class="small_text">* Chris and Ruby voices (hopefully)</p>
+			<p class="small_text" style="font-size:8px;">- Contact me if you are interested in voicing either character</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const all_possible_karters = ["Chris.gif","Ruby.gif","Lawyer.gif","SuperSonic.gif","WorstMario.gif"];
+		randomize_racist(document.getElementById('karter1'),1);
+		randomize_racist(document.getElementById('karter2'),2);
+		randomize_racist(document.getElementById('karter3'),3);
+		randomize_racist(document.getElementById('karter4'),4);
+		document.getElementById('karter1').addEventListener("animationiteration", function() {randomize_racist(document.getElementById('karter1'),1);}, false);
+		document.getElementById('karter2').addEventListener("animationiteration", function() {randomize_racist(document.getElementById('karter2'),2);}, false);
+		document.getElementById('karter3').addEventListener("animationiteration", function() {randomize_racist(document.getElementById('karter3'),3);}, false);
+		document.getElementById('karter4').addEventListener("animationiteration", function() {randomize_racist(document.getElementById('karter4'),4);}, false);
+
+		function randomize_racist(el,num){
+			let new_racist = Math.floor(Math.random() * all_possible_karters.length);
+			el.src = "Assets/Racists/" + all_possible_karters[new_racist];
+			//document.style.setProperty("--karter" + num + "_speed",Math.floor(Math.random() * 5000) + "ms");
+			el.classList.toggle('karter');
+		}
+	</script>
 </body>
 </html>
