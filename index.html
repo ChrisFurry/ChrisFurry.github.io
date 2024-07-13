@@ -1,236 +1,90 @@
 <!DOCTYPE html>
 <html>
-<style>
-	@font-face { font-family: b8bitopp; src: url('Assets/fonts/8bitoperator.ttf'); } 
-	:root {
-		--color-bg:			#000000;
-		--color-text:		#000000;
-		--color-shadow:		#000000;
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+	:root 
+	{
+		--color-font: #FEFEFE;
+		--color-inv-font: #0C0C0C;
+		
+		--color-shadow: #0C0C0C;
+		--color-inv-shadow: #FEFEFE;
 
-		--banner-color:		#000000;
+		--color-font-yellow: linear-gradient(white, #C0A000);
 
-		--image-invert:		0%;
-
-		--background-width:	100%;
-
-		--link-normal:		#000000;
-		--link-visited:		#000000;
-		--link-hover:		#000000;
-		--link-active:		#000000;
+		--background-width:	200%;
 	}
-	* {
-		transition:all 1s;
-		transition-timing-function: ease-in-out;
 
-		font-family: b8bitopp;
-		font-smooth: never;
+	* 
+	{
+		/*transition:all 1s;
+		transition-timing-function: ease-in-out;*/
+
+		font-family: "Source Code Pro", monospace;
 
 		image-rendering: pixelated;
 	}
-	body {
-		padding: 25px;
+	body 
+	{
+		background-color: #2C2C2C;
 
-		background-color: var(--color-bg);
+		color: var(--color-font);
 
-		color: var(--color-text);
+		font-size: 1vw;
 
-		font-size: 1.25vw;
 		text-align: center;
 		text-shadow: 
 		0.1vw 0.1vw var(--color-shadow),
 		0.1vw 0vw var(--color-shadow),
 		0vw 0.1vw var(--color-shadow);
 	}
-	/* Animation Keyframes */
-	@keyframes scroll-left {
-		0% {transform: translateX(0%);}
-		100% {transform: translateX(-50%);}
-	}
-	@keyframes section-bg-move {
-		0% {background-position-x: 0px; background-position-y: 0px;}
-		100% {background-position-x: -32px; background-position-y: -32px;}
-	}
-	/* Links */
-	a:link {
-		color: var(--link-normal);
-	}
-	a:visited {
-		color: var(--link-visited);
-	}
-	a:hover {
-		color: var(--link-hover);
-	}
-	a:active {
-		color: var(--link-active);
-	}
-	/* Background  */
-	.background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: var(--background-width);
-		height: 100%;
 
-		background-image: url('Assets/images/Background/Background.png');
-		background-attachment: fixed;
-		background-repeat: repeat-x;
-		background-position: center top;
-		background-size: auto 100%;
-
-		z-index: -20;
-
-		animation: scroll-left 40s infinite linear;
-		transition: opacity 1s;
-	}
-	.background.overlay {
-		background-image: url('Assets/images/Background/Background-Day.png');
-
-		opacity: var(--image-invert);
-
-		z-index: -20;
-
-		animation: scroll-left 40s infinite linear;
-	}
-	.background.backclouds {
-		background-image: url('Assets/images/Background/BackClouds.png');
-
-		z-index: -19;
-
-		animation: scroll-left 30s infinite linear;
-	}
-	.background.middleclouds {
-		background-image: url('Assets/images/Background/MiddleClouds.png');
-
-		z-index: -17;
-
-		animation: scroll-left 25s infinite linear;
-	}
-	.background.frontclouds {
-		background-image: url('Assets/images/Background/FrontClouds.png');
-
-		z-index: -15;
-
-		animation: scroll-left 15s infinite linear;
-	}
-	.background.backclouds-day {
-
-		background-image: url('Assets/images/Background/BackClouds-Day.png');
-		
-		opacity: var(--image-invert);
-
-		z-index: -18;
-
-		animation: scroll-left 30s infinite linear;
-	}
-	.background.middleclouds-day {
-		background-image: url('Assets/images/Background/MiddleClouds-Day.png');
-		
-		opacity: var(--image-invert);
-
-		z-index: -16;
-
-		animation: scroll-left 25s infinite linear;
-	}
-	.background.frontclouds-day {
-		background-image: url('Assets/images/Background/FrontClouds-Day.png');
-		
-		opacity: var(--image-invert);
-
-		z-index: -14;
-
-		animation: scroll-left 15s infinite linear;
-	}
-	.bottombar-warning {
-		position:fixed;
-		left:0;
-		bottom: 0;
-		width:100%;
-
-		background-color: var(--color-bg);
-
-		z-index: 100;
-	}
-	/* Website Sections  */
-	.banner {
-		background-color: #1f1f1f;
-
-		overflow: visible;
-
-		margin: auto;
-
-		width: 50%;
-		height: auto;
-
-		line-height: 1%;
-
-		object-fit: cover;
-
-		border-radius: 10px;
-		border-style: solid;
-		border-width: 2px;
-		border-color: #00ff24;
-
-		filter: invert(var(--image-invert));
-
-		color: #ffffff;
-		text-shadow:
-		-0.1vw 0vw 0 #040404,
-		0.1vw 0vw 0 #040404,
-		0vw -0.1vw 0 #040404,
-		0vw 0.1vw 0 #040404,
-		-0.1vw -0.1vw 0 #040404,
-		0.1vw -0.1vw 0 #040404,
-		-0.1vw 0.1vw 0 #040404,
-		0.1vw 0.1vw 0 #040404;
-	}
-	.section {
-		overflow: hidden;
-
-		background-image: url('Assets/images/BackBlock.png');
-		background-blend-mode: multiply;
-
-		max-width: 50vw;
-
-		border-image: url('Assets/images/boarder.gif');
-		border-image-slice: 20%;
-		border-image-repeat: repeat;
-		border-image-width: 10px;
-
-		border-style: solid;
-		border-width: 2px;
-		border-color: var(--color-text);
-
-		margin: auto;
-
-		animation: section-bg-move 1s infinite linear;
-	}
-	.section.aboutme {
-
-	}
-	.section.mainpages {
-
-	}
-	.section.projects {
-
-	}
-	.section.mods {
-		
-	}
-	.section.contact {
-		
-	}
-	.project-flexbox {
-		display: flex;
-		align-items: center;
-		width:100%;
-		justify-content: space-around;
-	}
-	.project-flexbox > div {
-		align-self: flex-start;
-
-		width:50%;
+	h1
+	{
+		font-family: "Anton", sans-serif;
+		font-weight: 400;
+		text-decoration: underline;
 	}
 
+	h2
+	{
+		font-family: "Anton", sans-serif;
+		font-weight: 400;
+		text-decoration: underline;
+	}
+
+	/* Text Flavors */
+	.yellow-text
+	{
+		background:var(--color-font-yellow);
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: none;
+	}
+	.rainbow-text
+	{
+		animation: ani_rainbow 2s infinite linear;
+	}
+	.pansexual-text
+	{
+		background:linear-gradient(#ff228c,#ff228c,#ffd800,#22b1ff,#22b1ff);
+
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: none;
+	}
+	.nonbinary-text
+	{
+		background:linear-gradient(#fdf435,#fdf435,#fdf435,#ffffff,#9d59d2,#2c2c2c,#2c2c2c);
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: none;
+	}
+	/* Special Buttons */
 	.imagelinks {
 		text-align: center;
 
@@ -242,114 +96,341 @@
 		border-style: solid;
 		border-color: white;
 		border-radius: 16px;
+
+		animation: ani_tilt 1s infinite step-end;
+	}
+	/* Flex Box */
+	.section-flexbox 
+	{
+		display: flex;
+		align-items: center;
+		width:100%;
+		justify-content: space-around;
+	}
+	.section-flexbox div 
+	{
+		align-self: flex-start;
+
+		width:50%;
+	}
+	/* Sections */
+	.main-horizontal-split 
+	{
+		display: flex;
+		align-items: center;
+
+		margin: auto;
+		width: 70vw;
+
+		justify-content: center;
+	}
+
+	.pageholder 
+	{
+		margin: auto;
+		margin-top: 0%;
+
+		position: relative;
+
+		width: 60vw;
+		height: 97vh;
+
+		overflow: scroll;
+
+		border-style: solid;
+		border-color: #d8ffff;
+		border-radius: 16px;
+
+		z-index: 10;
+	}
+	/* Tabs */
+	.tab 
+	{
+		position: relative;
+		
+		margin: auto;
+		margin-right: 0%;
+		margin-top: 2vh;
+
+		width: 10vw;
+		height: auto;
+
+		overflow: inherit;
+	}
+
+	.tab button 
+	{
+		background-color: #002424;
+
+		float: right;
+
+		width: 100%;
+		height: 100%;
+
+		cursor: pointer;
+		padding: 14px 16px;
+
+		text-align: left;
+
+		border-style: solid;
+		border-color: #6c48d8;
+		border-radius: 16px;
+
+		translate: 3vw 0%;
+
+		color: var(--color-font);
+		text-shadow: 
+		0.1vw 0.1vw var(--color-shadow),
+		0.1vw 0vw var(--color-shadow),
+		0vw 0.1vw var(--color-shadow);
+	}
+
+	.tab button:hover 
+	{
+		background-color: #24b424;
+		border-color: #90b4ff;
+
+		translate: 2vw 0%;
+
+		color: var(--color-font);
+		text-shadow: 
+		0.1vw 0.1vw var(--color-shadow),
+		0.1vw 0vw var(--color-shadow),
+		0vw 0.1vw var(--color-shadow);
+	}
+
+	.tab button.active 
+	{
+		background-color: #6cff24;
+		border-color: #d8ffff;
+
+		translate: 1vw 0%;
+		
+		color: var(--color-inv-font);
+		text-shadow: 
+		0.1vw 0.1vw var(--color-inv-shadow),
+		0.1vw 0vw var(--color-inv-shadow),
+		0vw 0.1vw var(--color-inv-shadow);
+	}
+
+	.tabcontent 
+	{
+		display: none;
+		padding: 6px 12px;
+	}
+	/* Links */
+	a:link 
+	{
+		color: #00ff90;
+	}
+
+	a:visited 
+	{
+		color: #b40090;
+	}
+
+	a:hover 
+	{
+		color: #b4ffb4;
+	}
+
+	a:active 
+	{
+		color: #d8ffff;
+	}
+	/* Background */
+	.background 
+	{
+		position: fixed;
+
+		top: 0;
+		left: 0;
+
+		width: var(--background-width);
+		height: 100%;
+	}
+	.background div 
+	{
+		position: fixed;
+
+		top: 0;
+		left: 0;
+
+		width: var(--background-width);
+		height: 100%;
+
+		background-attachment: fixed;
+		background-repeat: repeat-x;
+		background-position: left top;
+		background-size: auto 100%;
+
+		animation-name: background-scroll;
+		animation-iteration-count: infinite;
+		animation-direction: normal;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+
+		z-index: -20;
+	}
+	/* Animation Keyframes */
+	@keyframes ani_rainbow
+	{
+		0%,100% {color: red;}
+		17% {color: orange;}
+		33% {color: yellow;}
+		50% {color: lime;}
+		67% {color: blue;}
+		83% {color: magenta;}
+	}
+	@keyframes ani_tilt
+	{
+		0% 100% {rotate:1deg;}
+		40% {rotate:-2deg;}
+		50% {rotate:-1deg;}
+		90% {rotate:2deg;}
+	}
+	@keyframes background-scroll {
+		0% {transform: translateX(0%);}
+		100% {transform: translateX(-50%);}
 	}
 </style>
 <head>
 	<title>ChrisFurry</title>
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
 </head>
 <body>
-	<!-- Top Bar -->
-	<link rel="stylesheet" href="topbar.css">
-	<img id="theme" src="Assets/buttons/Theme-Nighttime.png" />
-	<!-- Bottom Warning -->
-	<div class='bottombar-warning'><p>Hey! This website stores a cookie! It is only for your theme. (This message only shows up on this page)</p></div>
 	<!-- Background -->
-	<div class='background'></div>
-	<div class='background overlay'></div>
-	<div class='background backclouds'></div>
-	<div class='background backclouds-day'></div>
-	<div class='background middleclouds'></div>
-	<div class='background middleclouds-day'></div>
-	<div class='background frontclouds'></div>
-	<div class='background frontclouds-day'></div>
-	<!-- Banner Section -->
-	<br /><br /><br />
-	<section>
-		<div class='banner'>
-			<img src="Assets/images/LogoAnimated.gif" style="width:70%;" />
-			<h3 style="position: absolute; bottom:0%; margin:auto; text-align:center; width: 100%; font-size: 1.5vw; transition:none;">Amateur Pixel artist, Artist, Animator, and Programmer</h3>
-		</div><br />
+	<section class="background">
+		<div style="background-image: url('Assets/Images/Background/1.png');animation-duration: 60s;"></div>
+		<div style="background-image: url('Assets/Images/Background/2.png');animation-duration: 40s;"></div>
+		<div style="background-image: url('Assets/Images/Background/5.png');animation-duration: 10s;"></div>
 	</section>
-	<br />
-	<!-- About Me Section -->
-	<section class='section aboutme'>
-		<h2 style="position: relative; margin:auto; text-align:center; transition:none;">About me</h2>
-		<p>Hi, I'm ChrisFurry, but you can call me Chris.</p>
-		<p>I am an 18 year old, my hobbies include:</p>
-		<p>- Digital Art -</p>
-		<p>- Pixel Art -</p>
-		<p>- Programming -</p>
-		<p>- Game Developement -</p>
-		<p>- Website Creation -</p>
-		<p>If you would like to contact me for any reason, the information will be at the bottom of this page.</p>
-	</section><br />
-	<br />
-	<!-- Main Section -->
-	<section class='section mainpages'>
-		<h2 style="text-decoration-line:underline;">Main Pages</h2>
-		<a href='https://chrisfurry.github.io/portfolio/'><img class='imagelinks' src='Assets/buttons/Portfolio.png' alt='Portfolio' /></a>
-		<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='Assets/buttons/MyCharacters.png' alt='My Characters' /></a>
-		<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='Assets/buttons/Commissions.png' alt='Commissions' /></a>
-		<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='Assets/buttons/PublicSpritesheets.png' alt='Public Spritesheets' /></a><br />
-		<br />
-	</section><br/>
-	<!-- Projects Section -->
-	<p>Icons are being made! Text links are only wip!</p>
-	<section style="left:10%; width:80%; position:relative;">
-		<div class='project-flexbox'>
-			<div class='section projects'>
-				<h2 style="text-decoration-line:underline;">Main Projects</h2>
-				<p><s>Techno-Break</s></p>
-				<h3 style="text-decoration-line:underline;">Frameworks</h3>
-				<a href='https://github.com/ChrisFurry/NeedlemouseFramework-Master'>Gamemaker Needlemouse Framework [OBSOLETE]</a><br />
-				<a href='https://github.com/ChrisFurry/SonicBasePhysics-Godot4'>Godot Sonic Base Physics [OBSOLETE]</a><br />
-				<a href='https://github.com/ChrisFurry/SonicBasePhysics2'>Godot Sonic Base Physics 2 [NO ACTIVE SUPPORT]</a><br />
-				<h3 style="text-decoration-line:underline;">Plugins</h3>
-				<a href='https://github.com/ChrisFurry/godot-cfutils'>Godot ChrisFurry Utilities</a><br />
-				<p><s>Godot Complex Sprite [UNRELEASED]</s></p>
+	<!-- This page uses javascript bullshit. -->
+	<div id="YOUNEEDJAVA">
+		<h1>THIS PAGE USES JAVASCRIPT, i'm sorry but I want it to look cool :(</h1>
+		<h2>I'll make a non-javascript version eventually, but for now please enable javascript.</h2>
+		<h2>I don't use cookies (except for the public spritesheets page) and I don't store your data.</h2>
+	</div>
+	<!-- Container -->
+	<section class="main-horizontal-split">
+		<!-- Tab Holder -->
+		<section class="tab">
+			<button class="tablink AboutMe" onclick="openTab('AboutMe')">About Me</button>
+			<button class="tablink Portfolio" onclick="openTab('Portfolio')">Portfolio</button>
+			<button class="tablink Projects" onclick="openTab('Projects')">Projects</button>
+			<button class="tablink OtherLinks" onclick="openTab('OtherLinks')">Other Links</button>
+			<button class="tablink Contact" onclick="openTab('Contact')">Contact Me</button>
+		</section>
+		<!-- Page Holder -->
+		<section class="pageholder" style="background-image: linear-gradient(to bottom right,#002424,#240024);">
+			<!-- Tab : About Me -->
+			<div class="tabcontent" id="AboutMe">
+				<!-- Logo -->
+				<img src="Assets/Images/ChrisFurryLogo.svg" style="width:60%; image-rendering: smooth;" />
+				<h3 style="margin-top:-13%;">.github.io</h3>
+				<!-- Header -->
+				<h1><img src="Assets/Images/AboutMeIcon.gif" style="width:4vw; height:auto; translate: 0% 25%;" />About Me<img src="Assets/Images/AboutMeIcon.gif" style="width:4vw; height:auto; translate: 0% 25%;" /></h1>
+				<!-- Description -->
+				<div style="justify-content:center;display: flex;align-items: center;">I am an artist, programmer, and a &#20<div class="pansexual-text">pansexual &#20</div><div class="nonbinary-text">non-binary &#20</div><div class="rainbow-text">furry! &#20</div>:P</div>
+				<p>	I like learning new things and talking to people.<br />
+					My passion project is <img src="Assets/Images/TechnoBreakLogo.svg" style="width:10%; height:auto; translate: 0% 25%; image-rendering: smooth;" />!!<br />
+					<div style="justify-content:center;display: flex;align-items: center; translate: 0% -2vh;">Consider checking out my &#20<div class="yellow-text" style="cursor: pointer;text-decoration: underline;" onclick="openTab('Portfolio')">Portfolio</div>&#20 tab to see some art I have done!</div></p><br />
+				<p>If you would like to help me, want me to help you, or just want to talk to me,<br />
+					<div style="justify-content:center;display: flex;align-items: center; translate: 0% -2vh;">check the &#20<div class="yellow-text" style="cursor: pointer;text-decoration: underline;" onclick="openTab('Contact')">Contact Me</div>&#20 tab! I'm almost always available to talk!</div>
+				</p>
 			</div>
-			<div class='section mods'>
-				<h2 style="text-decoration-line:underline;">Mods</h2>
-				<h3 style="text-decoration-line:underline;"><a href="https://www.srb2.org/">Sonic Robo Blast 2</a></h3>
-				<a href='https://chrisfurry.github.io/srb23dblastsonic/'>Saturn Sonic (Sonic 3D Blast, Character)</a><br />
-				<a href='https://chrisfurry.github.io/srb2mario/'>The Worst Mario (Character)</a><br />
-				<h3 style="text-decoration-line:underline;"><a href="https://www.srb2.org/">Ring Racers</a></h3>
-				<a href='https://chrisfurry.github.io/rrcharacterpack/'>ChrisFurry's Ring Racers Mega Collection</a><br />
+			<!-- Tab : Portfolio -->
+			<div class="tabcontent" id="Portfolio">
+				<h1>Portfolio</h1>
+				<h2>Spritework</h2><br />
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Spritework-1.gif" style="width: 20%;" />
+					<img src="Assets/Images/Portfolio/Spritework-2.gif" style="width: 20%;" />
+					<img src="Assets/Images/Portfolio/Spritework-3.gif" style="width: 20%;" />
+					<img src="Assets/Images/Portfolio/Spritework-4.png" style="width: 15%;" />
+					<img src="Assets/Images/Portfolio/Spritework-5.gif" style="width: 20%;" />
+				</section>
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Spritework-7.png" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/Spritework-9.gif" style="width: 40%;" />
+				</section>
+				<img src="Assets/Images/Portfolio/Spritework-8.gif" style="width: 50%;" />
+				<h2>Artwork</h2><br />
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Drawing-1.png" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/Drawing-2.png" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/Drawing-3.png" style="width: 40%;" />
+				</section>
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Drawing-4.png" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/Drawing-5.png" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/Drawing-6.png" style="width: 40%;" />
+				</section>
+				<h2>Animation Sketches</h2><br />
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/SA-1.gif" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/SA-2.gif" style="width: 40%;" />
+					<img src="Assets/Images/Portfolio/SA-3.gif" style="width: 40%;" />
+				</section>
+				<h2>SVG/Vector Art</h2><br />
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Vector-1.svg" style="width: 20%;" />
+					<img src="Assets/Images/ChrisFurryLogo.svg" style="width: 33.333333333%;" />
+					<img src="Assets/Images/TechnoBreakLogo.svg" style="width: 33.333333333%;" />
+				</section>
+				<h2>3D Model</h2><br />
+				<section class="section-flexbox">
+					<img src="Assets/Images/Portfolio/Model-1.png" style="width: 50%;" />
+					<img src="Assets/Images/Portfolio/Model-2.png" style="width: 50%;" />
+				</section>
+				<h2>Animation [None yet...]</h2><br />
+			</div>
+			<!-- Tab : Projects -->
+			<div class="tabcontent" id="Projects">
+				<h1>Projects</h1>
+				<h2>Games I'm Making</h2>
+				<a><img src="Assets/Images/TechnoBreakLogo.svg" style="width:10%; height:auto; translate: 0% 25%; image-rendering: smooth;" /> [No page]</a>
+				<p>And another to be announced...</p>
+				<h2>Projects I Work On</h2>
+				<a href='https://twitter.com/gregethgeist'>Starfate [As a coder, link to Gregeth Greist]</a>
+				<br />
+				<h1>Engines/Frameworks</h1>
+				<a>[C] Chris Engine [My game engine, temp name, no link]</a><br />
+				<a href='https://github.com/ChrisFurry/SonicBasePhysics2'>[Godot] Sonic Base Physics 2 [OBSOLETE]</a><br />
+				<a href='https://github.com/ChrisFurry/SonicBasePhysics-Godot4'>[Godot] Sonic Base Physics [OBSOLETE]</a><br />
+				<a href='https://github.com/ChrisFurry/NeedlemouseFramework-Master'>[Gamemaker] Needlemouse Framework [OBSOLETE]</a><br />
+				<h2>Mods I made/Worked on</h2>
+				<a href="./rrcharacterpack">[Ring Racers|Character Pack, Lua] ChrisFurry's Mega Collection</a><br />
+				<a href='./srb2mario'>[SRB2|Character] The Worst Mario</a><br />
+				<a href='./srb23dblastsonic'>[SRB2|Character] Saturn Sonic (Sonic 3D Blast)</a><br />
 				<br />
 			</div>
-		</div>
-	</section><br />
-	<!-- Contact Information Section -->
-	<section class='section contact'>
-		<h2 style="text-decoration-line:underline;">Contact Information</h2>
-		<a title="Cohost" href="https://cohost.org/ChrisFurry">Cohost</a> | <a title="Github" href="https://github.com/ChrisFurry">Github</a> | <a title="Cohost" href="https://wetdry.world/@ChrisFurry">Wetdry.world</a>
-		<br /><a title="Itch.io" href="https://chrisfurry.itch.io/">Itch.io</a> | <a title="Newgrounds" href="https://chrisfurry.newgrounds.com/">Newgrounds</a>
-		<br /><a title="Kofi" href="https://ko-fi.com/chrisfurry">Ko-Fi (For donations)</a>
-		<p>Discord: chrisfurry</p>
-		<p>Email: ChrisFurry2005@gmail.com</p>
-		<h3 style="text-decoration-line:underline;">Other Links</h3>
-		<a title="Source code" href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website's source code</a><br />
-		<br />
-	</section><br />
-	<br />
-	<!-- JavaScript -->
-	<script src='Theme.js'></script>
-	<script>
-		rescale_background();
-
-		addEventListener("resize", (event) => {
-			rescale_background();
-		});
-		function rescale_background() {
-			let windowSizeMul = (window.innerHeight / 480);
-			let windowScreenWid = 320 * windowSizeMul;
-			let windowScreenFinal = Math.ceil(window.innerWidth / windowScreenWid) * 2 * windowScreenWid;
-			style.setProperty('--background-width',	windowScreenFinal + 'px');
-		}
-	</script>
+			<!-- Tab : Other Links -->
+			<div class="tabcontent" id="OtherLinks">
+				<h1>Other Links</h1>
+				<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='Assets/Buttons/MyCharacters.png' alt='My Characters' style="animation-delay:500ms;" /></a><br />
+				<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='Assets/Buttons/Commissions.png' alt='Commissions' /></a><br />
+				<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='Assets/Buttons/PublicSpritesheets.png' alt='Public Spritesheets' style="animation-delay:500ms;" /></a><br />
+				<br />
+				<br />
+			</div>
+			<!-- Tab : Contact Me -->
+			<div class="tabcontent" id="Contact">
+				<h1>Contact Information</h1>
+				<p>Email: ChrisFurry2005@gmail.com<br />
+				Discord: chrisfurry</p>
+				<a href="https://cohost.org/ChrisFurry">Cohost: @ChrisFurry</a><br />
+				<a href="https://github.com/ChrisFurry">Github: ChrisFurry</a><br />
+				<a href="https://chrisfurry.newgrounds.com">Newgrounds: chrisfurry</a><br />
+				<a href="https://chrisfurry.itch.io">Itch.io: chrisfurry</a><br />
+				<a href="https://ko-fi.com/chrisfurry">Kofi (for donations): chrisfurry</a><br />
+				<h1>Misc</h1>
+				<a href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website Source Code</a>
+				<br />
+				<br />
+			</div>
+		</section>
+	</section>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
