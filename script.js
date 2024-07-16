@@ -1,5 +1,16 @@
 // Remove the "JAVASCRIPT REQUIRED" text and open the "About me" tab (or open previous)
 document.getElementById("YOUNEEDJAVA").style.display = "none";
+document.getElementById("javascript-tabs").style.display = "block";
+// Doing this so the let value isn't kept.
+do
+{
+	let tablines = document.getElementsByClassName("no-javascript-lines");
+	for (i = 0; i < tablines.length; i++)
+	{
+		tablines[i].style.display = "none";
+	}
+}
+while(false);
 
 // Init
 let body,style;

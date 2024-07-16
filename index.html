@@ -31,7 +31,7 @@
 
 		color: var(--color-font);
 
-		font-size: 1vw;
+		font-size: max(1vw,8px);
 
 		text-align: center;
 		text-shadow: 
@@ -42,6 +42,7 @@
 
 	h1
 	{
+		font-size: max(3vw,16px);
 		font-family: "Anton", sans-serif;
 		font-weight: 400;
 		text-decoration: underline;
@@ -85,7 +86,8 @@
 		text-shadow: none;
 	}
 	/* Special Buttons */
-	.imagelinks {
+	.imagelinks 
+	{
 		text-align: center;
 
 		image-rendering: pixelated;
@@ -98,6 +100,69 @@
 		border-radius: 16px;
 
 		animation: ani_tilt 1s infinite step-end;
+	}
+
+	.spritesheet-link 
+	{
+		position: relative;
+
+		display: flex;
+		align-items: center;
+
+		text-align: left;
+
+		background-color: #484890;
+
+		border-style: solid;
+		border-color: #6c48d8;
+		border-radius: 16px;
+
+		width: 40vw;
+		margin: auto;
+
+		justify-content: space-between;
+		overflow: hidden;
+
+		color: var(--color-font);
+	}
+
+	.spritesheet-link.alt 
+	{
+		text-align: right;
+	}
+
+	.spritesheet-link img 
+	{
+		position: relative;
+
+		display: block;
+		object-fit: contain;
+		
+		align-self: stretch;
+		object-fit:cover;
+
+		width: 25%;
+
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+
+		margin: 0;
+
+		border-style: none solid none none;
+		border-color: #6c48d8;
+	}
+
+	.spritesheet-link.alt img 
+	{
+		border-style: none none none solid;
+	}
+
+	.spritesheet-link:hover 
+	{
+		background-color: #9090d8;
+		border-color: #90b4ff;
 	}
 	/* Flex Box */
 	.section-flexbox 
@@ -132,6 +197,8 @@
 
 		position: relative;
 
+		min-width: 640px;
+
 		width: 60vw;
 		height: 97vh;
 
@@ -146,11 +213,14 @@
 	/* Tabs */
 	.tab 
 	{
+		display: none;
 		position: relative;
 		
 		margin: auto;
 		margin-right: 0%;
 		margin-top: 2vh;
+
+		min-width: 124px;
 
 		width: 10vw;
 		height: auto;
@@ -215,7 +285,7 @@
 
 	.tabcontent 
 	{
-		display: none;
+		
 		padding: 6px 12px;
 	}
 	/* Links */
@@ -272,6 +342,36 @@
 
 		z-index: -20;
 	}
+	/* Non-Javascript Parts */
+	#YOUNEEDJAVA
+	{
+		position: relative;
+	}
+
+	.nojava-pageholder 
+	{
+		margin: auto;
+		margin-top: 0%;
+
+		position: relative;
+
+		width: 60vw;
+		height: auto;
+
+		overflow: scroll;
+
+		border-style: solid;
+		border-color: #d8ffff;
+		border-radius: 16px;
+
+		z-index: 10;
+	}
+
+	.no-javascript-lines
+	{
+		border-style: solid;
+		border-color: #d8ffff;
+	}
 	/* Animation Keyframes */
 	@keyframes ani_rainbow
 	{
@@ -303,28 +403,30 @@
 	<section class="background">
 		<div style="background-image: url('Assets/Images/Background/1.png');animation-duration: 60s;"></div>
 		<div style="background-image: url('Assets/Images/Background/2.png');animation-duration: 40s;"></div>
+		<div style="background-image: url('Assets/Images/Background/3.png');animation-duration: 30s;"></div>
+		<div style="background-image: url('Assets/Images/Background/4.png');animation-duration: 20s;"></div>
 		<div style="background-image: url('Assets/Images/Background/5.png');animation-duration: 10s;"></div>
 	</section>
-	<!-- This page uses javascript bullshit. -->
-	<div id="YOUNEEDJAVA">
-		<h1>THIS PAGE USES JAVASCRIPT, i'm sorry but I want it to look cool :(</h1>
-		<h2>I'll make a non-javascript version eventually, but for now please enable javascript.</h2>
-		<h2>I don't use cookies (except for the public spritesheets page) and I don't store your data.</h2>
-	</div>
+	<!-- Javascript Warning -->
+	<section class="nojava-pageholder" id="YOUNEEDJAVA" style="background-image: linear-gradient(to bottom right,#002424,#240024);">
+		<h1>NOTICE</h1>
+		<p>This page uses javascript, having javascript disabled will not allow you to use tabs, if you don't care then go ahead.</p>
+	</section>
 	<!-- Container -->
 	<section class="main-horizontal-split">
 		<!-- Tab Holder -->
-		<section class="tab">
+		<section class="tab" id="javascript-tabs">
 			<button class="tablink AboutMe" onclick="openTab('AboutMe')">About Me</button>
 			<button class="tablink Portfolio" onclick="openTab('Portfolio')">Portfolio</button>
 			<button class="tablink Projects" onclick="openTab('Projects')">Projects</button>
+			<button class="tablink PublicSSheets" onclick="openTab('PublicSSheets')">Public Spritesheets</button>
 			<button class="tablink OtherLinks" onclick="openTab('OtherLinks')">Other Links</button>
 			<button class="tablink Contact" onclick="openTab('Contact')">Contact Me</button>
 		</section>
 		<!-- Page Holder -->
 		<section class="pageholder" style="background-image: linear-gradient(to bottom right,#002424,#240024);">
 			<!-- Tab : About Me -->
-			<div class="tabcontent" id="AboutMe">
+			<div class="tabcontent" id="AboutMe" name="AboutMe">
 				<!-- Logo -->
 				<img src="Assets/Images/ChrisFurryLogo.svg" style="width:60%; image-rendering: smooth;" />
 				<h3 style="margin-top:-13%;">.github.io</h3>
@@ -339,8 +441,9 @@
 					<div style="justify-content:center;display: flex;align-items: center; translate: 0% -2vh;">check the &#20<div class="yellow-text" style="cursor: pointer;text-decoration: underline;" onclick="openTab('Contact')">Contact Me</div>&#20 tab! I'm almost always available to talk!</div>
 				</p>
 			</div>
+			<div class="no-javascript-lines"></div>
 			<!-- Tab : Portfolio -->
-			<div class="tabcontent" id="Portfolio">
+			<div class="tabcontent" id="Portfolio" name="Portfolio">
 				<h1>Portfolio</h1>
 				<h2>Spritework</h2><br />
 				<section class="section-flexbox">
@@ -385,8 +488,9 @@
 				</section>
 				<h2>Animation [None yet...]</h2><br />
 			</div>
+			<div class="no-javascript-lines"></div>
 			<!-- Tab : Projects -->
-			<div class="tabcontent" id="Projects">
+			<div class="tabcontent" id="Projects" name="Projects">
 				<h1>Projects</h1>
 				<h2>Games I'm Making</h2>
 				<a><img src="Assets/Images/TechnoBreakLogo.svg" style="width:10%; height:auto; translate: 0% 25%; image-rendering: smooth;" /> [No page]</a>
@@ -405,17 +509,77 @@
 				<a href='./srb23dblastsonic'>[SRB2|Character] Saturn Sonic (Sonic 3D Blast)</a><br />
 				<br />
 			</div>
+			<div class="no-javascript-lines"></div>
+			<!-- Tab : Public Spritesheets -->
+			<div class="tabcontent" id="PublicSSheets" name="PublicSSheets">
+				<h1>Public Spritesheets</h1>
+				<p>	This part of the site is just an archive of spritesheets my friends and I have made and/or worked on.<br />
+					Any spritesheet on this page is free to use as long as credit is given.<br />
+					If you would like to contribute or continue one of these spritesheets, lmk so I can update this page.</p>
+				<h2>Sonic Spritesheets</h2>
+				<a class="spritesheet-link" href="Assets/Spritesheets/Source/NeedlemouseSonic.png">
+					<img src="Assets/Spritesheets/Icons/NeedleMousev1.png" />
+					<div>
+						<h3 style="text-decoration: underline;">Needlemouse V1 [abandoned]</h3>
+						<p>Contributors: ChrisFurry, NeigePastel, Imadomy<br />
+							Last Updated: 2022</p>
+					</div>
+				</a><br />
+				<a class="spritesheet-link alt" href="Assets/Spritesheets/Source/Needlemouse2Sonic.png">
+					<div>
+						<h3 style="text-decoration: underline;">Needlemouse V2 [abandoned]</h3>
+						<p>Contributors: ChrisFurry, NeigePastel, Imadomy<br />
+							Last Updated: September 12th, 2022</p>
+					</div>
+					<img src="Assets/Spritesheets/Icons/NeedleMousev2.png" />
+				</a><br />
+				<a class="spritesheet-link" href="Assets/Spritesheets/Source/Sonic Museum-Sheet.png">
+					<img src="Assets/Spritesheets/Icons/MuseumSonic.png" />
+					<div>
+						<h3 style="text-decoration: underline;">Museum Sonic</h3>
+						<p>Artist: ChrisFurry<br />
+							Last Updated: September 30th, 2023</p>
+					</div>
+				</a><br />
+				<a class="spritesheet-link alt" href="Assets/Spritesheets/Source/Sonic3AwesomEdit.png">
+					<div>
+						<h3 style="text-decoration: underline;">Sonic 3 Awesom Edit :) [abandoned]</h3>
+						<p>Contributors: ChrisFurry, NeigePastel<br />
+							Last Updated: 2023</p>
+					</div>
+					<img src="Assets/Spritesheets/Icons/Sonic3AwsomeEdit.png" />
+				</a><br />
+				<a class="spritesheet-link" href="Assets/Spritesheets/Source/RSonic1.png">
+					<img src="Assets/Spritesheets/Icons/RSonic1.png" />
+					<div>
+						<h3 style="text-decoration: underline;">Random Sonic Edit #1</h3>
+						<p>Artist: ChrisFurry<br />
+							Last Updated: 2023</p>
+					</div>
+				</a><br />
+
+				<h2>Mario Spritesheets</h2>
+				<a class="spritesheet-link alt" href="Assets/Spritesheets/Source/SMWLuigi.png">
+					<div>
+						<h3 style="text-decoration: underline;">Super Mario World Luigi - ChrisFurry Edit</h3>
+						<p>Artist: ChrisFurry<br />
+							Last Updated: August 14th, 2023</p>
+					</div>
+					<img src="Assets/Spritesheets/Icons/SMWLuigi.png" />
+				</a><br />
+			</div>
+			<div class="no-javascript-lines"></div>
 			<!-- Tab : Other Links -->
-			<div class="tabcontent" id="OtherLinks">
+			<div class="tabcontent" id="OtherLinks" name="OtherLinks">
 				<h1>Other Links</h1>
 				<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='Assets/Buttons/MyCharacters.png' alt='My Characters' style="animation-delay:500ms;" /></a><br />
 				<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='Assets/Buttons/Commissions.png' alt='Commissions' /></a><br />
-				<a href='https://chrisfurry.github.io/spritesheets/'><img class='imagelinks' src='Assets/Buttons/PublicSpritesheets.png' alt='Public Spritesheets' style="animation-delay:500ms;" /></a><br />
 				<br />
 				<br />
 			</div>
+			<div class="no-javascript-lines"></div>
 			<!-- Tab : Contact Me -->
-			<div class="tabcontent" id="Contact">
+			<div class="tabcontent" id="Contact" name="Contact">
 				<h1>Contact Information</h1>
 				<p>Email: ChrisFurry2005@gmail.com<br />
 				Discord: chrisfurry</p>
@@ -424,7 +588,7 @@
 				<a href="https://chrisfurry.newgrounds.com">Newgrounds: chrisfurry</a><br />
 				<a href="https://chrisfurry.itch.io">Itch.io: chrisfurry</a><br />
 				<a href="https://ko-fi.com/chrisfurry">Kofi (for donations): chrisfurry</a><br />
-				<h1>Misc</h1>
+				<h2>Misc</h2>
 				<a href="https://github.com/ChrisFurry/ChrisFurry.github.io">Website Source Code</a>
 				<br />
 				<br />
