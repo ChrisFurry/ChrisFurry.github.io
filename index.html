@@ -125,9 +125,21 @@
 		color: var(--color-font);
 	}
 
+	.spritesheet-link div
+	{
+		margin-right: auto;
+		margin-left: 1%;
+	}
+
 	.spritesheet-link.alt 
 	{
 		text-align: right;
+	}
+
+	.spritesheet-link.alt div
+	{
+		margin-right: 1%;
+		margin-left: auto;
 	}
 
 	.spritesheet-link img 
@@ -161,7 +173,7 @@
 	.spritesheet-link:hover 
 	{
 		background-color: #9090d8;
-		border-color: #90b4ff;
+		border-color: #d8ffff;
 	}
 	/* Flex Box */
 	.section-flexbox 
@@ -417,7 +429,6 @@
 		<section class="tab" id="javascript-tabs">
 			<button class="tablink AboutMe" onclick="openTab('AboutMe')">About Me</button>
 			<button class="tablink MySona" onclick="openTab('MySona')">My Sona</button>
-			<button class="tablink Portfolio" onclick="openTab('Portfolio')">Portfolio</button>
 			<button class="tablink Projects" onclick="openTab('Projects')">Projects</button>
 			<button class="tablink PublicSSheets" onclick="openTab('PublicSSheets')">Public Spritesheets</button>
 			<button class="tablink OtherLinks" onclick="openTab('OtherLinks')">Other Links</button>
@@ -461,53 +472,6 @@
 				<h5 style="color:#00000000;text-shadow: none;">They do NOT look like kaykay SHUT UP!!!!!!!</h5>
 			</div>
 			<div class="no-javascript-lines"></div>
-			<!-- Tab : Portfolio -->
-			<div class="tabcontent" id="Portfolio" name="Portfolio">
-				<h1>Portfolio</h1>
-				<h2>Spritework</h2><br />
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Spritework-1.gif" style="width: 20%;" />
-					<img src="Assets/Images/Portfolio/Spritework-2.gif" style="width: 20%;" />
-					<img src="Assets/Images/Portfolio/Spritework-3.gif" style="width: 20%;" />
-					<img src="Assets/Images/Portfolio/Spritework-4.png" style="width: 15%;" />
-					<img src="Assets/Images/Portfolio/Spritework-5.gif" style="width: 20%;" />
-				</section>
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Spritework-7.png" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/Spritework-9.gif" style="width: 40%;" />
-				</section>
-				<img src="Assets/Images/Portfolio/Spritework-8.gif" style="width: 50%;" />
-				<h2>Artwork</h2><br />
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Drawing-1.png" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/Drawing-2.png" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/Drawing-3.png" style="width: 40%;" />
-				</section>
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Drawing-4.png" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/Drawing-5.png" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/Drawing-6.png" style="width: 40%;" />
-				</section>
-				<h2>Animation Sketches</h2><br />
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/SA-1.gif" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/SA-2.gif" style="width: 40%;" />
-					<img src="Assets/Images/Portfolio/SA-3.gif" style="width: 40%;" />
-				</section>
-				<h2>SVG/Vector Art</h2><br />
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Vector-1.svg" style="width: 20%;" />
-					<img src="Assets/Images/ChrisFurryLogo.svg" style="width: 33.333333333%;" />
-					<img src="Assets/Images/TechnoBreakLogo.svg" style="width: 33.333333333%;" />
-				</section>
-				<h2>3D Model</h2><br />
-				<section class="section-flexbox">
-					<img src="Assets/Images/Portfolio/Model-1.png" style="width: 50%;" />
-					<img src="Assets/Images/Portfolio/Model-2.png" style="width: 50%;" />
-				</section>
-				<h2>Animation [None yet...]</h2><br />
-			</div>
-			<div class="no-javascript-lines"></div>
 			<!-- Tab : Projects -->
 			<div class="tabcontent" id="Projects" name="Projects">
 				<h1>Projects</h1>
@@ -517,15 +481,40 @@
 				<h2>Projects I Work On</h2>
 				<a href='https://twitter.com/gregethgeist'>Starfate [As a programmer & artist, link to Gregeth Greist]</a>
 				<br />
-				<h1>Engines/Frameworks</h1>
-				<a>[C++] Chris Engine [My game engine, temp name, no link]</a><br />
+				<h2>Mods I made/Worked on</h2>
+				<h3>Note: All links lead to the same MEGA folder, I may make new pages for them eventually.</h3>
+				<a class="spritesheet-link" href="https://mega.nz/folder/YUB0XDIQ#RUw_3SWyF5PQht53hBxacg">
+					<img src="Assets/Buttons/Project-RRCollection.webp" />
+					<div>
+						<h3 style="text-decoration: underline;">ChrisFurry's Ring Racers Mega Collection</h3>
+						<p>Contributors: ChrisFurry, SupersonicNK,<br />RetroStation, Jaezew<br />
+							Status: ON HIATUS UNTIL 2.4<br />
+							Last Updated: 2024/05/03 (V1.5)</p>
+					</div>
+				</a><br />
+				<a class="spritesheet-link alt" href="https://mega.nz/folder/YUB0XDIQ#RUw_3SWyF5PQht53hBxacg">
+					<div>
+						<h3 style="text-decoration: underline;">Mario</h3>
+						<p>Contributors: ChrisFurry<br />
+							Status: mario<br />
+							Last Updated: 2023/09/20 (V1.1)</p>
+					</div>
+					<img src="Assets/Buttons/Project-SRB2mario.webp" />
+				</a><br />
+				<a class="spritesheet-link" href="https://mega.nz/folder/YUB0XDIQ#RUw_3SWyF5PQht53hBxacg">
+					<img src="Assets/Buttons/Project-SRB23dblast.webp" />
+					<div>
+						<h3 style="text-decoration: underline;">Saturn Sonic (Sonic 3D Blast)</h3>
+						<p>Contributors: ChrisFurry<br />
+							Status: ON HIATUS UNTIL 2.3<br />
+							Last Updated: 2023/08/16 (V1)</p>
+					</div>
+				</a><br />
+				<h2>Engines/Frameworks</h2>
+				<a>[C++] Chris Engine [Canceled, no link]</a><br />
 				<a href='https://github.com/ChrisFurry/SonicBasePhysics2'>[Godot] Sonic Base Physics 2 [OBSOLETE]</a><br />
 				<a href='https://github.com/ChrisFurry/SonicBasePhysics-Godot4'>[Godot] Sonic Base Physics [OBSOLETE]</a><br />
 				<a href='https://github.com/ChrisFurry/NeedlemouseFramework-Master'>[Gamemaker] Needlemouse Framework [OBSOLETE]</a><br />
-				<h2>Mods I made/Worked on</h2>
-				<a href="./rrcharacterpack">[Ring Racers|Character Pack, Lua] ChrisFurry's Mega Collection</a><br />
-				<a href='./srb2mario'>[SRB2|Character] The Worst Mario</a><br />
-				<a href='./srb23dblastsonic'>[SRB2|Character] Saturn Sonic (Sonic 3D Blast)</a><br />
 				<br />
 			</div>
 			<div class="no-javascript-lines"></div>
@@ -592,7 +581,7 @@
 			<div class="tabcontent" id="OtherLinks" name="OtherLinks">
 				<h1>Other Links</h1>
 				<a href='https://toyhou.se/ChrisFurry'><img class='imagelinks' src='Assets/Buttons/MyCharacters.png' alt='My Characters' style="animation-delay:500ms;" /></a><br />
-				<a href='https://docs.google.com/spreadsheets/d/1wVui9AtvoJThtSNZRQgjEqcoOS1Pr4sAeAq2b8pLByU/edit?usp=sharing'><img class='imagelinks' src='Assets/Buttons/Commissions.png' alt='Commissions' /></a><br />
+				<a href='Commissions'><img class='imagelinks' src='Assets/Buttons/Commissions.png' alt='Commissions & Portfolio' /></a><br />
 				<br />
 				<br />
 			</div>
